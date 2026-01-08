@@ -2,282 +2,124 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>家猫品种识物背诵助手 - 专业统计版</title>
+    <title>答题汇总系统</title>
     <style>
-        :root {
-            --primary-color: #007bff;
-            --success-color: #28a745;
-            --danger-color: #dc3545;
-            --bg-color: #f4f7f6;
-            --gray-color: #6c757d;
-        }
-
         body { 
-            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; 
-            margin: 0; 
-            padding-top: 140px; 
-            background-color: var(--bg-color); 
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
         }
-
-        /* 顶部固定区域 */
-        .header-sticky {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 15px 20px; text-align: center;
-        }
-
-        .header-sticky h2 { margin: 0 0 10px 0; font-size: 1.2rem; color: #333; }
-
-        .input-group { display: flex; justify-content: center; gap: 10px; margin-bottom: 10px; }
-
-        input { 
-            padding: 12px 15px; font-size: 16px; width: 300px; 
-            border: 2px solid #ddd; border-radius: 25px; transition: all 0.3s;
-        }
-
-        input:focus { border-color: var(--primary-color); outline: none; box-shadow: 0 0 8px rgba(0,123,255,0.2); }
-
-        .progress-container {
-            max-width: 600px; margin: 0 auto; background: #eee; height: 8px; border-radius: 4px; overflow: hidden;
-        }
-
-        #progressBar { width: 0%; height: 100%; background: var(--success-color); transition: width 0.3s; }
-
-        /* 网格布局 */
-        .quiz-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto;
-        }
-
-        .quiz-card {
-            background: white; border-radius: 12px; overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 2px solid transparent; text-align: center;
-            transition: transform 0.2s;
-        }
-
-        .quiz-card.done { border-color: var(--success-color); }
-        .quiz-card.missed { border-color: var(--danger-color); }
-
-        .img-container { width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #f0f0f0; }
-        .quiz-img { width: 100%; height: 100%; object-fit: cover; }
-
-        .card-info { padding: 10px; font-size: 0.85rem; }
-        .user-ans { font-weight: bold; margin-bottom: 5px; min-height: 1.2em; }
-
-        /* 正确率进度条展示 */
-        .acc-bar-wrap { 
-            height: 6px; width: 85%; background: #eee; border-radius: 3px; margin: 5px auto; 
-            display: none; 
-        }
-        .acc-bar-fill { height: 100%; border-radius: 3px; }
-
-        /* 结果区域 */
-        .result-area {
-            max-width: 800px; margin: 20px auto; background: white; 
-            padding: 30px; border-radius: 12px; text-align: center;
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-
-        .stat-box {
-            background: #f8f9fa; border: 1px solid #ddd; padding: 20px;
-            border-radius: 8px; margin: 20px 0; line-height: 1.8; font-size: 1.1rem;
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
         }
-
-        .stat-box span { font-weight: bold; color: var(--primary-color); font-size: 1.3em; }
-
-        button {
-            padding: 10px 25px; border-radius: 20px; border: none;
-            cursor: pointer; font-weight: bold; transition: opacity 0.2s;
+        
+        .category {
+            margin-bottom: 30px;
         }
-        #endBtn { background: var(--gray-color); color: white; }
-        #restartBtn { background: var(--primary-color); color: white; }
-        button:hover { opacity: 0.8; }
-
-        .hidden { display: none; }
-        .message-tip { height: 20px; font-size: 14px; margin-top: 5px; font-weight: bold; }
+        
+        .category h2 {
+            color: #007bff;
+            padding-left: 10px;
+            border-left: 4px solid #007bff;
+            margin-bottom: 15px;
+        }
+        
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            padding: 18px 25px;
+            font-size: 18px;
+            border-radius: 12px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            font-weight: 500;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+        }
+        
+        .btn-cat {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .btn-univ {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .instructions h3 {
+            color: #28a745;
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
-
-<div class="header-sticky">
-    <h2>请输入答案 (<span id="countInfo">0/0</span>)</h2>
-    <div class="input-group">
-        <input id="answerInput" type="text" placeholder="看图猜名，回车确认..." autofocus>
-        <button onclick="endQuiz()" id="endBtn">提交并查看排名</button>
-        <button onclick="restartQuiz()" class="hidden" id="restartBtn">重新开始</button>
+    <div class="container">
+        <h1>📚 答题汇总系统</h1>
+        
+        <div class="category">
+            <h2>🐱 猫科知识答题</h2>
+            <div class="btn-grid">
+                <a class="btn btn-cat" href="家猫.html">家猫品种答题</a>
+                <a class="btn btn-cat" href="猫科动物.html">猫科动物答题</a>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>🏫 中国大学答题</h2>
+            <div class="btn-grid">
+                <a class="btn btn-univ" href="北京市大学.html">北京市大学答题</a>
+                <a class="btn btn-univ" href="上海市大学.html">上海市大学答题</a>
+                <a class="btn btn-univ" href="广东省大学.html">广东省大学答题</a>
+                <a class="btn btn-univ" href="天津市大学.html">天津市大学答题</a>
+                <a class="btn btn-univ" href="重庆市大学.html">重庆市大学答题</a>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>📖 使用说明</h3>
+            <p>1. 点击上方按钮进入对应的答题页面</p>
+            <p>2. 在答题页面输入答案，按回车键确认</p>
+            <p>3. 答完后点击"提交"查看成绩和排名</p>
+            <p>4. 答题过程中随时可以点击左上角的"← 首页"按钮返回</p>
+            <p>5. 所有页面都支持重新开始答题</p>
+        </div>
     </div>
-    <div class="progress-container"><div id="progressBar"></div></div>
-    <div id="message" class="message-tip"></div>
-</div>
-
-<div class="quiz-grid" id="quizGrid"></div>
-
-<div id="resultArea" class="hidden result-area">
-    <h3>📊 最终成绩统计 (Scoring)</h3>
-    <div class="stat-box" id="statSummary"></div>
-</div>
-
-<script>
-    // 整合你提供的完整 alts 列表，并预设全球正确率数据
-    const quizData = [
-        { img: "阿比西尼亚猫.jpg", alts: ["阿比西尼亚猫","兔猫","Abyssinian"], acc: 42 },
-        { img: "埃及猫.jpg", alts: ["埃及猫","Egyptian Mau","Mau"], acc: 38 },
-        { img: "巴厘岛猫.jpg", alts: ["巴厘岛猫","巴里猫","巴厘猫","爪哇猫","Balinese","Javanese"], acc: 25 },
-        { img: "波米拉猫.jpg", alts: ["波米拉猫","柏米拉猫","博美拉猫","Burmilla"], acc: 15 },
-        { img: "波斯猫.jpg", alts: ["波斯猫","Persian"], acc: 88 },
-        { img: "伯曼猫.jpg", alts: ["伯曼猫","缅甸圣猫","圣猫","Birman"], acc: 35 },
-        { img: "布偶猫.jpg", alts: ["布偶猫","拉格道尔猫","Ragdoll"], acc: 82 },
-        { img: "德文帝王猫.jpg", alts: ["德文帝王猫","德文卷毛猫","德文力克斯猫","Devon Rex"], acc: 31 },
-        { img: "东方猫.jpg", alts: ["东方猫","东方短毛猫","Oriental Shorthair","Oriental"], acc: 22 },
-        { img: "东奇尼猫.jpg", alts: ["东奇尼猫","汤金斯猫","托金斯猫","Tonkinese"], acc: 18 },
-        { img: "俄罗斯蓝猫.jpg", alts: ["俄罗斯蓝猫","阿契安吉蓝猫","Russian Blue"], acc: 75 },
-        { img: "哈瓦那棕猫.jpg", alts: ["哈瓦那棕猫","哈瓦那猫","Havana Brown"], acc: 12 },
-        { img: "柯尼斯卷毛猫.jpg", alts: ["柯尼斯卷毛猫","康沃尔卷毛猫","科尼斯卷毛猫","Cornish Rex"], acc: 28 },
-        { img: "克拉特猫.jpg", alts: ["克拉特猫","科拉特猫","呵叻猫","吉祥猫","Korat"], acc: 14 },
-        { img: "拉波卷毛猫.jpg", alts: ["拉波卷毛猫","拉波猫","莱博猫","LaPerm"], acc: 11 },
-        { img: "褴褛猫.jpg", alts: ["褴褛猫","勒嘉德摩猫","Ragamuffin"], acc: 20 },
-        { img: "狼猫.jpg", alts: ["狼猫","莱科猫","Lykoi"], acc: 36 },
-        { img: "马恩岛猫.jpg", alts: ["马恩岛猫","曼岛猫","曼克斯猫","Manx"], acc: 33 },
-        { img: "美国短毛猫.jpg", alts: ["美国短毛猫","美短","American Shorthair"], acc: 85 },
-        { img: "美国短尾猫.jpg", alts: ["美国短尾猫","美短尾","American Bobtail"], acc: 32 },
-        { img: "美国卷耳猫.jpg", alts: ["美国卷耳猫","美国反耳猫","American Curl"], acc: 45 },
-        { img: "美国硬毛猫.jpg", alts: ["美国硬毛猫","美国刚毛猫","American Wirehair"], acc: 19 },
-        { img: "孟加拉猫.jpg", alts: ["孟加拉猫","豹猫","孟加拉豹猫","Bengal"], acc: 78 },
-        { img: "孟买猫.jpg", alts: ["孟买猫","小黑豹","Bombay"], acc: 55 },
-        { img: "缅甸猫.jpg", alts: ["缅甸猫","缅摩猫","Burmese"], acc: 48 },
-        { img: "缅因猫.jpg", alts: ["缅因猫","缅因库恩猫","Maine Coon"], acc: 80 },
-        { img: "挪威森林猫.jpg", alts: ["挪威森林猫","挪威森","Norwegian Forest Cat"], acc: 62 },
-        { img: "欧西猫.jpg", alts: ["欧西猫","奥西猫","Ocicat"], acc: 17 },
-        { img: "欧洲缅甸猫.jpg", alts: ["欧洲缅甸猫","European Burmese"], acc: 21 },
-        { img: "日本短尾猫.jpg", alts: ["日本短尾猫","招财猫","Japanese Bobtail"], acc: 40 },
-        { img: "赛尔凯克卷毛猫.jpg", alts: ["赛尔凯克卷毛猫","塞尔凯克卷毛猫","羊皮筏子猫","Selkirk Rex"], acc: 26 },
-        { img: "斯芬克斯猫.jpg", alts: ["斯芬克斯猫","加拿大无毛猫","无毛猫","Sphynx"], acc: 72 },
-        { img: "苏格兰折耳猫.jpg", alts: ["苏格兰折耳猫","折耳猫","Scottish Fold"], acc: 79 },
-        { img: "索马里猫.jpg", alts: ["索马里猫","Somali"], acc: 30 },
-        { img: "泰国御猫.jpg", alts: ["泰国御猫","考玛尼猫","Khao Manee"], acc: 16 },
-        { img: "土耳其安哥拉猫.jpg", alts: ["土耳其安哥拉猫","安哥拉猫","Turkish Angora"], acc: 34 },
-        { img: "土耳其梵猫.jpg", alts: ["土耳其梵猫","梵猫","Turkish Van"], acc: 37 },
-        { img: "西伯利亚猫.jpg", alts: ["西伯利亚猫","西伯利亚森林猫","Siberian"], acc: 44 },
-        { img: "夏特尔猫.jpg", alts: ["夏特尔猫","沙特尔猫","Chartreux"], acc: 29 },
-        { img: "暹罗猫.jpg", alts: ["暹罗猫","泰国猫","Siamese"], acc: 86 },
-        { img: "新加坡猫.jpg", alts: ["新加坡猫","Singpura"], acc: 23 },
-        { img: "异国猫.jpg", alts: ["异国猫","异国短毛猫","加菲猫","Exotic Shorthair"], acc: 83 },
-        { img: "英国短毛猫.jpg", alts: ["英国短毛猫","英短","British Shorthair"], acc: 91 },
-        { img: "重点色短毛猫.jpg", alts: ["重点色短毛猫","端子色短毛猫","Colorpoint Shorthair"], acc: 27 }
-    ];
-
-    let userCorrectIndexes = [];
-    let ended = false;
-    const inputBox = document.getElementById("answerInput");
-    const grid = document.getElementById("quizGrid");
-
-    function initGrid() {
-        grid.innerHTML = "";
-        quizData.forEach((item, index) => {
-            const card = document.createElement("div");
-            card.className = "quiz-card";
-            card.id = `card-${index}`;
-            const barColor = item.acc > 60 ? "#28a745" : (item.acc > 30 ? "#ffc107" : "#dc3545");
-            card.innerHTML = `
-                <div class="img-container"><img src="${item.img}" class="quiz-img"></div>
-                <div class="card-info">
-                    <div id="ans-text-${index}" class="user-ans">-</div>
-                    <div class="acc-bar-wrap" id="acc-wrap-${index}">
-                        <div class="acc-bar-fill" style="width:${item.acc}%; background:${barColor}"></div>
-                        <div style="font-size:10px; color:#666; margin-top:2px">正确率: ${item.acc}%</div>
-                    </div>
-                </div>
-            `;
-            grid.appendChild(card);
-        });
-        updateProgress();
-    }
-
-    inputBox.addEventListener("keydown", (e) => { if (e.key === "Enter" && !ended) checkAnswer(); });
-
-    function checkAnswer() {
-        const input = inputBox.value.trim().toLowerCase();
-        const message = document.getElementById("message");
-        if (!input) return;
-
-        let foundIndex = quizData.findIndex(item => 
-            item.alts.some(a => a.toLowerCase() === input)
-        );
-
-        if (foundIndex !== -1) {
-            if (!userCorrectIndexes.includes(foundIndex)) {
-                userCorrectIndexes.push(foundIndex);
-                message.innerHTML = `<span style="color:var(--success-color)">✔ 匹配正确！</span>`;
-                markAsDone(foundIndex, input);
-            } else {
-                message.innerHTML = `<span style="color:orange">⚠ 已识别过该品种</span>`;
-            }
-        } else {
-            message.innerHTML = `<span style="color:var(--danger-color)">✘ 未匹配到相关品种</span>`;
-        }
-        inputBox.value = "";
-        updateProgress();
-    }
-
-    function markAsDone(index, input) {
-        const card = document.getElementById(`card-${index}`);
-        card.classList.add("done");
-        document.getElementById(`ans-text-${index}`).innerText = input;
-        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-
-    function updateProgress() {
-        const count = userCorrectIndexes.length;
-        document.getElementById("countInfo").innerText = `${count}/${quizData.length}`;
-        document.getElementById("progressBar").style.width = `${(count/quizData.length)*100}%`;
-    }
-
-    // 正态分布模拟：计算打败百分比
-    function calculatePercentile(score) {
-        const mean = 18.5; 
-        const stdDev = 8.0; 
-        const z = (score - mean) / stdDev;
-        const t = 1 / (1 + 0.2315419 * Math.abs(z));
-        const d = 0.3989423 * Math.exp(-z * z / 2);
-        let prob = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
-        if (z > 0) prob = 1 - prob;
-        return Math.round(prob * 1000) / 10;
-    }
-
-    function endQuiz() {
-        ended = true;
-        inputBox.disabled = true;
-        
-        quizData.forEach((item, index) => {
-            document.getElementById(`acc-wrap-${index}`).style.display = "block";
-            if (!userCorrectIndexes.includes(index)) {
-                document.getElementById(`card-${index}`).classList.add("missed");
-                document.getElementById(`ans-text-${index}`).innerHTML = `<span style="color:var(--danger-color)">${item.alts[0]}</span>`;
-            }
-        });
-
-        const score = userCorrectIndexes.length;
-        const total = quizData.length;
-        const percentile = calculatePercentile(score);
-        const avgScore = 18.5;
-
-        document.getElementById("statSummary").innerHTML = `
-            你获得了 <span>${score}</span> / ${total} 分 (<span>${Math.round(score/total*100)}%</span>)<br>
-            这超过了全球 <span>${percentile}%</span> 的挑战者。<br>
-            全球平均分数是 <span>${avgScore}</span> 分。
-        `;
-        
-        document.getElementById("resultArea").classList.remove("hidden");
-        document.getElementById("restartBtn").classList.remove("hidden");
-        document.getElementById("endBtn").classList.add("hidden");
-        window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
-    }
-
-    function restartQuiz() {
-        location.reload();
-    }
-
-    initGrid();
-</script>
 </body>
 </html>

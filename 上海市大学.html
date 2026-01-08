@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>上海市大学识名助手 - 武书连排名版</title>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --bg-color: #f8f9fa;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --popularity-color: #4299e1;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 170px 20px 20px; /* 保留你修改后的padding-top数值 */
+            background-color: var(--bg-color);
+            color: #333;
+        }
+
+        /* 顶部固定区域 */
+        .header-sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 20px;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-sticky h2 {
+            margin: 0 0 15px 0;
+            font-size: 1.3rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        input {
+            padding: 12px 15px;
+            font-size: 16px;
+            width: 300px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 8px rgba(0,123,255,0.2);
+        }
+
+        .progress-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #eee;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        #progressBar {
+            width: 0%;
+            height: 100%;
+            background: var(--success-color);
+            transition: width 0.3s;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 10px auto;
+            font-size: 0.9rem;
+        }
+
+        /* 表格样式（保留你修改的抬头格式） */
+        .university-table {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .university-table th,
+        .university-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .university-table th {
+            background-color: #f1f3f5;
+            font-weight: 600;
+        }
+
+        .university-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .rank-cell {
+            width: 80px;
+            text-align: center;
+        }
+
+        .type-cell {
+            width: 120px;
+        }
+
+        .popularity-cell {
+            width: 180px;
+        }
+
+        .type-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: white;
+        }
+
+        .type-综合 { background-color: #6c757d; }
+        .type-理工 { background-color: #28a745; }
+        .type-师范 { background-color: #17a2b8; }
+        .type-农业 { background-color: #20c997; }
+        .type-医药 { background-color: #dc3545; }
+        .type-财经 { background-color: #ffc107; color: #333; }
+	.type-政法 { background-color: #fd7e14; }
+        .type-语文 { background-color: #1e88e5; }
+        .type-艺术 { background-color: #e83e8c; }
+        .type-体育 { background-color: #26a69a; }
+
+        /* 知名度进度条样式 */
+        .popularity-wrap {
+            width: 100%;
+            height: 8px;
+            background-color: #f0f2f5;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+
+        .popularity-bar {
+            height: 100%;
+            background-color: var(--popularity-color);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .popularity-text {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 2px;
+            text-align: right;
+        }
+
+        .name-cell {
+            font-weight: 500;
+        }
+
+        .university-table .done {
+            background-color: rgba(40, 167, 69, 0.1);
+        }
+
+        .university-table .done .name-cell {
+            color: var(--success-color);
+            text-decoration: line-through;
+        }
+
+        .university-table .revealed {
+            background-color: rgba(220, 53, 69, 0.1);
+        }
+
+        .university-table .revealed .name-cell {
+            color: var(--danger-color);
+        }
+
+        /* 其他样式保持不变 */
+        .hint-btn {
+            color: var(--primary-color);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 2px 5px;
+        }
+
+        .hint-btn:hover {
+            text-decoration: underline;
+        }
+
+        .result-area {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-box {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .stat-box span {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.3em;
+        }
+
+        button {
+            padding: 10px 25px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        #endBtn {
+            background: var(--gray-color);
+            color: white;
+        }
+
+        #restartBtn {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .message-tip {
+            height: 24px;
+            font-size: 14px;
+            margin: 5px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .return-home {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            padding: 6px 15px;
+            border-radius: 15px;
+            border: none;
+            background: #6c757d;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 10;
+        }
+
+        .difficulty-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .difficulty-easy {
+            background-color: var(--success-color);
+        }
+
+        .difficulty-medium {
+            background-color: #ffc107;
+        }
+
+        .difficulty-hard {
+            background-color: var(--danger-color);
+        }
+
+        @media (max-width: 768px) {
+            .university-table {
+                font-size: 0.9rem;
+            }
+            
+            .type-cell {
+                width: 100px;
+            }
+            
+            .popularity-cell {
+                width: 120px;
+            }
+            
+            input {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .input-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .header-sticky {
+                padding: 10px;
+            }
+            
+            body {
+                padding-top: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-sticky">
+    <button class="return-home" onclick="window.location.href='index.html'">← 首页</button>
+    
+    <div class="header-content">
+        <h2>请输入大学名称 (<span id="countInfo">0/19</span>)</h2> <!-- 上海共30所高校 -->
+        <div class="input-group">
+            <input id="answerInput" type="text" placeholder="输入大学名称，回车确认..." autofocus>
+            <button onclick="endQuiz()" id="endBtn">提交并查看结果</button>
+            <button onclick="restartQuiz()" class="hidden" id="restartBtn">重新开始</button>
+            <button onclick="showHint()" class="hint-btn" style="padding:10px 20px; border-radius:20px; background:#e9ecef; color:#333;">获取提示</button>
+        </div>
+        <div class="message-tip" id="message"></div>
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+        <div class="stats-bar">
+            <div>已答对: <span id="correctCount">0</span></div>
+            <div>剩余提示次数: <span id="hintCount">3</span>/3</div>
+        </div>
+    </div>
+</div>
+
+<!-- 保留你修改的表格抬头格式 -->
+<table class="university-table">
+    <thead>
+        <tr>
+            <<th class="rank-cell">武书连排名</th>
+            <<th class="type-cell">学校类型</th>
+            <<th>大学名称</th>
+            <<th>难度</th>
+            <<th class="popularity-cell">国内知名度</th>
+        </tr>
+    </thead>
+    <tbody id="universityTableBody">
+        <!-- JS动态生成行 -->
+    </tbody>
+</table>
+
+<div class="result-area hidden" id="resultArea">
+    <h3>上海市大学识名挑战结果</h3> 
+    <div class="stat-box" id="statSummary"></div>
+    <div style="margin-top:20px;">
+        <button onclick="restartQuiz()" id="finalRestartBtn">重新挑战</button>
+        <button onclick="window.location.href='index.html'" style="margin-left:10px; background:#6c757d; color:white;">返回首页</button>
+    </div>
+</div>
+
+<script>
+    // 上海市大学数据源（严格匹配武书连2025官网截图）
+  const universityData = [
+    { rank: 4, name: "上海交通大学", type: "综合", level: "A++", isDoubleTop: true, is985: true, popularity: 99, difficulty: "easy" },
+    { rank: 7, name: "复旦大学", type: "综合", level: "A++", isDoubleTop: true, is985: true, popularity: 98, difficulty: "easy" },
+    { rank: 18, name: "同济大学", type: "理工", level: "A+", isDoubleTop: true, is985: true, popularity: 96, difficulty: "easy" },
+    { rank: 33, name: "华东师范大学", type: "师范", level: "A+", isDoubleTop: true, is985: true, popularity: 94, difficulty: "easy" },
+    { rank: 42, name: "上海大学", type: "综合", level: "A", isDoubleTop: true, is211: true, popularity: 90, difficulty: "easy" },
+    { rank: 66, name: "华东理工大学", type: "理工", level: "A", isDoubleTop: true, is211: true, popularity: 88, difficulty: "medium" },
+    { rank: 91, name: "东华大学", type: "理工", level: "B+", isDoubleTop: true, is211: true, popularity: 85, difficulty: "medium" },
+    { rank: 92, name: "上海科技大学", type: "理工", level: "B+", isDoubleTop: false, popularity: 82, difficulty: "medium" },
+    { rank: 99, name: "上海理工大学", type: "理工", level: "B+", isDoubleTop: false, popularity: 78, difficulty: "medium" },
+    { rank: 122, name: "上海财经大学", type: "财经", level: "B+", isDoubleTop: true, is211: true, popularity: 92, difficulty: "easy" },
+    { rank: 140, name: "上海师范大学", type: "师范", level: "B+", isDoubleTop: false, popularity: 76, difficulty: "medium" },
+    { rank: 168, name: "华东政法大学", type: "政法", level: "B", isDoubleTop: false, popularity: 79, difficulty: "medium" },
+    { rank: 209, name: "上海海事大学", type: "理工", level: "B", isDoubleTop: false, popularity: 72, difficulty: "hard" },
+    { rank: 222, name: "上海中医药大学", type: "医药", level: "B", isDoubleTop: true, popularity: 80, difficulty: "medium" },
+    { rank: 248, name: "上海外国语大学", type: "语文", level: "C*", isDoubleTop: true, is211: true, popularity: 83, difficulty: "medium" },
+    { rank: 252, name: "上海海洋大学", type: "农业", level: "C*", isDoubleTop: true, popularity: 70, difficulty: "hard" },
+    { rank: 254, name: "上海工程技术大学", type: "理工", level: "C*", isDoubleTop: false, popularity: 68, difficulty: "hard" },
+    { rank: 287, name: "上海电力大学", type: "理工", level: "C*", isDoubleTop: false, popularity: 66, difficulty: "hard" },
+    { rank: 333, name: "上海应用技术大学", type: "理工", level: "C", isDoubleTop: false, popularity: 63, difficulty: "hard" },
+    { rank: 371, name: "上海体育大学", type: "体育", level: "C", isDoubleTop: true, popularity: 71, difficulty: "hard" },
+    { rank: 381, name: "上海对外经贸大学", type: "财经", level: "C", isDoubleTop: false, popularity: 65, difficulty: "hard" },
+    { rank: 403, name: "上海立信会计金融学院", type: "财经", level: "C", isDoubleTop: false, popularity: 64, difficulty: "hard" },
+    { rank: 442, name: "上海政法学院", type: "政法", level: "D+", isDoubleTop: false, popularity: 61, difficulty: "hard" },
+    { rank: 451, name: "上海音乐学院", type: "艺术", level: "D", isDoubleTop: true, popularity: 75, difficulty: "hard" },
+    { rank: 511, name: "上海第二工业大学", type: "理工", level: "D", isDoubleTop: false, popularity: 58, difficulty: "hard" },
+    { rank: 560, name: "上海戏剧学院", type: "艺术", level: "D", isDoubleTop: true, popularity: 73, difficulty: "hard" },
+    { rank: 574, name: "上海电机学院", type: "理工", level: "E+", isDoubleTop: false, popularity: 55, difficulty: "hard" },
+    { rank: 584, name: "上海健康医学院", type: "医药", level: "E+", isDoubleTop: false, popularity: 52, difficulty: "hard" },
+    { rank: 669, name: "上海商学院", type: "财经", level: "E", isDoubleTop: false, popularity: 48, difficulty: "hard" },
+    { rank: 770, name: "上海海关学院", type: "财经", level: "E", isDoubleTop: false, popularity: 46, difficulty: "hard" }
+];
+    // 全局变量（逻辑完全不变）
+    let userCorrectIndexes = [];
+    let ended = false;
+    let hintRemain = 3;
+    let revealedIndexes = [];
+
+    // DOM元素（逻辑完全不变）
+    const inputBox = document.getElementById("answerInput");
+    const message = document.getElementById("message");
+    const countInfo = document.getElementById("countInfo");
+    const progressBar = document.getElementById("progressBar");
+    const correctCount = document.getElementById("correctCount");
+    const hintCount = document.getElementById("hintCount");
+    const universityTableBody = document.getElementById("universityTableBody");
+    const resultArea = document.getElementById("resultArea");
+    const statSummary = document.getElementById("statSummary");
+    const endBtn = document.getElementById("endBtn");
+    const restartBtn = document.getElementById("restartBtn");
+    const finalRestartBtn = document.getElementById("finalRestartBtn");
+
+    // 初始化表格（逻辑完全不变）
+    function initTable() {
+        universityTableBody.innerHTML = "";
+        universityData.forEach((uni, index) => {
+            const tr = document.createElement("tr");
+            tr.id = `uni-row-${index}`;
+            
+            let difficultyIcon = "";
+            if (uni.difficulty === "easy") {
+                difficultyIcon = '<span class="difficulty-indicator difficulty-easy"></span>简单';
+            } else if (uni.difficulty === "medium") {
+                difficultyIcon = '<span class="difficulty-indicator difficulty-medium"></span>中等';
+            } else {
+                difficultyIcon = '<span class="difficulty-indicator difficulty-hard"></span>困难';
+            }
+
+            tr.innerHTML = `
+                <td class="rank-cell">${uni.rank}</td>
+                <td class="type-cell"><span class="type-tag type-${uni.type}">${uni.type}</span></td>
+                <td class="name-cell">■■■■■■</td>
+                <td>${difficultyIcon}</td>
+                <td class="popularity-cell">
+                    <div class="popularity-wrap" style="display:none;">
+                        <div class="popularity-bar" style="width:${uni.popularity}%"></div>
+                    </div>
+                    <div class="popularity-text" style="display:none;">${uni.popularity}%</div>
+                </td>
+            `;
+            universityTableBody.appendChild(tr);
+        });
+        updateProgress();
+    }
+
+    // 答题、提示、结果统计等逻辑完全不变（复用原有成熟逻辑）
+    inputBox.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !ended) checkAnswer();
+    });
+
+    function checkAnswer() {
+        const input = inputBox.value.trim().replace(/\s+/g, "").toLowerCase();
+        if (!input) {
+            message.innerHTML = `<span style="color:orange">⚠ 请输入大学名称</span>`;
+            return;
+        }
+
+        let foundIndex = universityData.findIndex(uni => 
+            uni.name.replace(/\s+/g, "").toLowerCase() === input
+        );
+
+        if (foundIndex !== -1) {
+            if (!userCorrectIndexes.includes(foundIndex)) {
+                userCorrectIndexes.push(foundIndex);
+                const row = document.getElementById(`uni-row-${foundIndex}`);
+                row.classList.add("done");
+                row.querySelector(".name-cell").textContent = universityData[foundIndex].name;
+                
+                message.innerHTML = `<span style="color:var(--success-color)">✔ 答对了！${universityData[foundIndex].name}</span>`;
+                row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                message.innerHTML = `<span style="color:orange">⚠ 你已经答对过这所大学了</span>`;
+            }
+        } else {
+            message.innerHTML = `<span style="color:var(--danger-color)">✘ 未匹配到该大学，请检查名称</span>`;
+        }
+
+        inputBox.value = "";
+        updateProgress();
+    }
+
+    function updateProgress() {
+        const correctNum = userCorrectIndexes.length;
+        const totalNum = universityData.length;
+        
+        countInfo.textContent = `${correctNum}/${totalNum}`;
+        correctCount.textContent = correctNum;
+        const progressPercent = (correctNum / totalNum) * 100;
+        progressBar.style.width = `${progressPercent}%`;
+
+        if (correctNum === totalNum) endQuiz();
+    }
+
+    function showHint() {
+        if (ended || hintRemain <= 0) return;
+
+        const availableIndexes = universityData
+            .map((_, index) => index)
+            .filter(index => !userCorrectIndexes.includes(index) && !revealedIndexes.includes(index));
+
+        if (availableIndexes.length === 0) {
+            message.innerHTML = `<span style="color:orange">⚠ 已无可用提示</span>`;
+            return;
+        }
+
+        const randomIndex = availableIndexes[Math.floor(Math.random() * availableIndexes.length)];
+        revealedIndexes.push(randomIndex);
+        hintRemain--;
+        
+        hintCount.textContent = hintRemain;
+        
+        const uni = universityData[randomIndex];
+        const hintName = uni.name.length > 2 ? `${uni.name.substring(0, 2)}■■■` : `${uni.name.substring(0, 1)}■■■`;
+        
+        const row = document.getElementById(`uni-row-${randomIndex}`);
+        row.classList.add("revealed");
+        row.querySelector(".name-cell").textContent = hintName;
+        
+        message.innerHTML = `<span style="color:var(--primary-color)">💡 提示：${uni.type}类大学，${hintName}</span>`;
+    }
+
+    function calculateAverageScore() {
+        const totalPopularity = universityData.reduce((sum, uni) => sum + uni.popularity, 0);
+        const average = totalPopularity / universityData.length;
+        return Math.round(average);
+    }
+
+    function calculatePercentile(score) {
+        const total = universityData.length;
+        const mean = calculateAverageScore() / 100 * total;
+        const stdDev = total * 0.2;
+        const z = (score - mean) / stdDev;
+        
+        let percentile;
+        if (z >= 2) percentile = 98;
+        else if (z >= 1) percentile = 84;
+        else if (z >= 0) percentile = 50 + (z * 34);
+        else if (z >= -1) percentile = 16 + (z + 1) * 34;
+        else if (z >= -2) percentile = 2 + (z + 2) * 14;
+        else percentile = 2;
+
+        return Math.round(percentile * 10) / 10;
+    }
+
+    function endQuiz() {
+        if (ended) return;
+        ended = true;
+        
+        inputBox.disabled = true;
+        endBtn.classList.add("hidden");
+        restartBtn.classList.remove("hidden");
+        
+        universityData.forEach((uni, index) => {
+            const row = document.getElementById(`uni-row-${index}`);
+            row.querySelector(".name-cell").textContent = uni.name;
+            
+            const popularityWrap = row.querySelector(".popularity-wrap");
+            const popularityText = row.querySelector(".popularity-text");
+            popularityWrap.style.display = "block";
+            popularityText.style.display = "block";
+            
+            if (!userCorrectIndexes.includes(index) && !row.classList.contains("revealed")) {
+                row.classList.add("revealed");
+            }
+        });
+
+        const score = userCorrectIndexes.length;
+        const total = universityData.length;
+        const scorePercent = Math.round((score / total) * 1000) / 10;
+        const averageScore = calculateAverageScore();
+        const percentile = calculatePercentile(score);
+
+        statSummary.innerHTML = `
+            <div style="margin-bottom:15px; font-size:1.2rem;">
+                你的最终得分：<span>${score}</span> / ${total}
+            </div>
+            <div>正确率：<span>${scorePercent}%</span></div>
+            <div>超过了 <span>${percentile}%</span> 的挑战者</div>
+            <div>本次挑战平均分：<span>${averageScore}</span> 分</div>
+            <div>你答对的双一流大学数量：<span>${
+                userCorrectIndexes.filter(index => universityData[index].isDoubleTop).length
+            }</span> 所</div>
+            <div>你遗漏的易答大学（知名度≥80）：<span>${
+                universityData.filter(uni => uni.popularity >=80 && !userCorrectIndexes.includes(universityData.indexOf(uni))).length
+            }</span> 所</div>
+        `;
+
+        resultArea.classList.remove("hidden");
+        resultArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function restartQuiz() {
+        userCorrectIndexes = [];
+        ended = false;
+        hintRemain = 3;
+        revealedIndexes = [];
+        
+        inputBox.disabled = false;
+        inputBox.value = "";
+        message.innerHTML = "";
+        endBtn.classList.remove("hidden");
+        restartBtn.classList.add("hidden");
+        resultArea.classList.add("hidden");
+        hintCount.textContent = hintRemain;
+        
+        initTable();
+        inputBox.focus();
+    }
+
+    window.onload = function() {
+        initTable();
+        inputBox.focus();
+    };
+</script>
+</body>
+</html>

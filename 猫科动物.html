@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>猫科动物识物背诵助手 - 专业统计版</title>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --bg-color: #f4f7f6;
+            --gray-color: #6c757d;
+        }
+
+        body { 
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; 
+            margin: 0; 
+            padding-top: 0px; /* 按你的要求设为0px */
+            background-color: var(--bg-color); 
+        }
+
+        /* 顶部固定区域 */
+        .header-sticky {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 10px 20px; text-align: center;
+        }
+
+        .header-sticky h2 { margin: 0 0 10px 0; font-size: 1.2rem; color: #333; }
+
+        .input-group { display: flex; justify-content: center; gap: 10px; margin-bottom: 10px; }
+
+        input { 
+            padding: 12px 15px; font-size: 16px; width: 300px; 
+            border: 2px solid #ddd; border-radius: 25px; transition: all 0.3s;
+        }
+
+        input:focus { border-color: var(--primary-color); outline: none; box-shadow: 0 0 8px rgba(0,123,255,0.2); }
+
+        .progress-container {
+            max-width: 600px; margin: 0 auto; background: #eee; height: 8px; border-radius: 4px; overflow: hidden;
+        }
+
+        #progressBar { width: 0%; height: 100%; background: var(--success-color); transition: width 0.3s; }
+
+        /* 网格布局 */
+        .quiz-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto;
+        }
+
+        .quiz-card {
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 2px solid transparent; text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .quiz-card.done { border-color: var(--success-color); }
+        .quiz-card.missed { border-color: var(--danger-color); }
+
+        .img-container { width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #f0f0f0; }
+        .quiz-img { width: 100%; height: 100%; object-fit: cover; }
+
+        .card-info { padding: 10px; font-size: 0.85rem; }
+        .user-ans { font-weight: bold; margin-bottom: 5px; min-height: 1.2em; }
+
+        /* 正确率进度条展示 */
+        .acc-bar-wrap { 
+            height: 6px; width: 85%; background: #eee; border-radius: 3px; margin: 5px auto; 
+            display: none; 
+        }
+        .acc-bar-fill { height: 100%; border-radius: 3px; }
+
+        /* 结果区域 */
+        .result-area {
+            max-width: 800px; margin: 20px auto; background: white; 
+            padding: 30px; border-radius: 12px; text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-box {
+            background: #f8f9fa; border: 1px solid #ddd; padding: 20px;
+            border-radius: 8px; margin: 20px 0; line-height: 1.8; font-size: 1.1rem;
+        }
+
+        .stat-box span { font-weight: bold; color: var(--primary-color); font-size: 1.3em; }
+
+        button {
+            padding: 10px 25px; border-radius: 20px; border: none;
+            cursor: pointer; font-weight: bold; transition: opacity 0.2s;
+        }
+        #endBtn { background: var(--gray-color); color: white; }
+        #restartBtn { background: var(--primary-color); color: white; }
+        button:hover { opacity: 0.8; }
+
+        .hidden { display: none; }
+        .message-tip { height: 20px; font-size: 14px; margin-top: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="header-sticky" style="position: relative;">
+    <!-- 回到首页按钮（和家猫页面样式完全一致） -->
+    <button style="
+        position: absolute; 
+        top: 10px;      
+        left: 10px;     
+        padding: 6px 15px; 
+        border-radius: 15px; 
+        border: none; 
+        background: #6c757d; 
+        color: white; 
+        cursor: pointer;
+        font-size: 14px; 
+        z-index: 10;     
+    " onclick="window.location.href='index.html'">
+        ← 首页
+    </button>
+
+    <h2 style="text-align: center; margin: 10px 0;">请输入答案 (<span id="countInfo">0/0</span>)</h2>
+    <div class="input-group">
+        <input id="answerInput" type="text" placeholder="看图猜名，回车确认..." autofocus>
+        <button onclick="endQuiz()" id="endBtn">提交并查看排名</button>
+        <button onclick="restartQuiz()" class="hidden" id="restartBtn">重新开始</button>
+    </div>
+    <div class="progress-container"><div id="progressBar"></div></div>
+    <div id="message" class="message-tip"></div>
+</div>
+
+<!-- 图片卡片容器（必须存在，和家猫页面一致） -->
+<div id="quizGrid" class="quiz-grid"></div>
+
+<!-- 结果统计区域（必须存在，和家猫页面一致） -->
+<div id="resultArea" class="result-area hidden">
+    <h3>挑战结果</h3>
+    <div class="stat-box" id="statSummary"></div>
+</div>
+
+<script>
+    // 完整的猫科动物数据（包含中文别名、拉丁学名、常用英文名）
+    const quizData = [
+        { img: "猫科动物图片/豹猫.jpg", alts: ["豹猫", "山狸子", "石虎", "Prionailurus bengalensis", "Leopard Cat"], acc: 45 },
+        { img: "猫科动物图片/豹子.jpg", alts: ["豹子", "花豹", "金钱豹", "Panthera pardus", "Leopard"], acc: 88 },
+        { img: "猫科动物图片/扁头豹猫.webp", alts: ["扁头豹猫", "扁头猫", "Prionailurus planiceps", "Flat-headed Cat"], acc: 12 },
+        { img: "猫科动物图片/丛林猫.jpg", alts: ["丛林猫", "野狸子", "Felis chaus", "Jungle Cat"], acc: 28 },
+        { img: "猫科动物图片/非洲野猫.jpg", alts: ["非洲野猫", "非洲野狸", "Felis lybica", "African Wildcat"], acc: 35 },
+        { img: "猫科动物图片/黑足猫.jpg", alts: ["黑足猫", "小斑猫", "Felis nigripes", "Black-footed Cat"], acc: 42 },
+        { img: "猫科动物图片/虎猫.jpg", alts: ["虎猫", "美洲豹猫", "Leopardus pardalis", "Ocelot"], acc: 38 },
+        { img: "猫科动物图片/荒漠猫.jpg", alts: ["荒漠猫", "中国山猫", "Felis bieti", "Chinese Desert Cat"], acc: 31 },
+        { img: "猫科动物图片/家猫.webp", alts: ["家猫", "猫咪", "Felis catus", "Domestic Cat"], acc: 98 },
+        { img: "猫科动物图片/老虎.jpg", alts: ["老虎", "虎", "Panthera tigris", "Tiger"], acc: 97 },
+        { img: "猫科动物图片/猎豹.jpg", alts: ["猎豹", "印度豹", "Acinonyx jubatus", "Cheetah"], acc: 95 },
+        { img: "猫科动物图片/美洲豹.jpg", alts: ["美洲豹", "美洲虎", "Panthera onca", "Jaguar"], acc: 85 },
+        { img: "猫科动物图片/南美草原猫.jpg", alts: ["南美草原猫", "潘帕斯猫", "Leopardus colocola", "Pampas Cat"], acc: 15 },
+        { img: "猫科动物图片/南美林猫.jpeg", alts: ["南美林猫", "智利林猫", "Leopardus guigna", "Güiña"], acc: 11 },
+        { img: "猫科动物图片/欧洲野猫.webp", alts: ["欧洲野猫", "Felis silvestris", "European Wildcat"], acc: 33 },
+        { img: "猫科动物图片/婆罗洲金猫.jpg", alts: ["婆罗洲金猫", "栗猫", "Catopuma badia", "Bornean Golden Cat"], acc: 9 },
+        { img: "猫科动物图片/乔氏猫.jpg", alts: ["乔氏猫", "美洲云猫", "Leopardus geoffroyi", "Geoffroy's Cat"], acc: 14 },
+        { img: "猫科动物图片/山原猫.jpg", alts: ["山原猫", "安第斯山猫", "Leopardus jacobita", "Andean Mountain Cat"], acc: 13 },
+        { img: "猫科动物图片/狮子.jpg", alts: ["狮子", "狮", "Panthera leo", "Lion"], acc: 96 },
+        { img: "猫科动物图片/小斑虎猫.jpg", alts: ["小斑虎猫", "Leopardus tigrinus", "Oncilla"], acc: 16 },
+        { img: "猫科动物图片/锈斑豹猫.jpg", alts: ["锈斑豹猫", "锈斑猫", "Prionailurus rubiginosus", "Rusty-spotted Cat"], acc: 48 },
+        { img: "猫科动物图片/雪豹.jpg", alts: ["雪豹", "艾叶豹", "Panthera uncia", "Snow Leopard"], acc: 75 },
+        { img: "猫科动物图片/巽他豹猫.jpg", alts: ["巽他豹猫", "Prionailurus javanensis", "Sunda Leopard Cat"], acc: 18 },
+        { img: "猫科动物图片/亚洲金猫.jpg", alts: ["亚洲金猫", "黄虎", "Catopuma temminckii", "Asian Golden Cat"], acc: 25 },
+        { img: "猫科动物图片/渔猫.jpg", alts: ["渔猫", "Prionailurus viverrinus", "Fishing Cat"], acc: 44 },
+        { img: "猫科动物图片/长尾虎猫.jpg", alts: ["长尾虎猫", "Leopardus wiedii", "Margay"], acc: 22 },
+        { img: "猫科动物图片/沙漠猫.jpg", alts: ["沙漠猫", "沙猫", "Felis margarita", "Sand Cat"], acc: 58 },
+        { img: "猫科动物图片/美洲狮.jpg", alts: ["美洲狮", "山狮", "Puma concolor", "Cougar"], acc: 82 },
+        { img: "猫科动物图片/非洲金猫.jpg", alts: ["非洲金猫", "Profelis aurata", "African Golden Cat"], acc: 20 },
+        { img: "猫科动物图片/狞猫.jpg", alts: ["狞猫", "沙漠猞猁", "Caracal caracal", "Caracal"], acc: 65 },
+        { img: "猫科动物图片/短尾猫.jpg", alts: ["短尾猫", "Bobcat", "Lynx rufus", "Bobcat"], acc: 52 },
+        { img: "猫科动物图片/加拿大猞猁.jpg", alts: ["加拿大猞猁", "Lynx canadensis", "Canadian Lynx"], acc: 55 },
+        { img: "猫科动物图片/欧亚猞猁.jpg", alts: ["欧亚猞猁", "林曳", "Lynx lynx", "Eurasian Lynx"], acc: 60 },
+        { img: "猫科动物图片/伊比利亚猞猁.jpg", alts: ["伊比利亚猞猁", "西班牙猞猁", "Lynx pardinus", "Iberian Lynx"], acc: 39 },
+        { img: "猫科动物图片/薮猫.jpg", alts: ["薮猫", "Leptailurus serval", "Serval"], acc: 70 },
+        { img: "猫科动物图片/兔狲.jpg", alts: ["兔狲", "帕拉斯猫", "Otocolobus manul", "Pallas's Cat"], acc: 84 },
+        { img: "猫科动物图片/纹猫.jpg", alts: ["纹猫", "云猫", "Pardofelis marmorata", "Marbled Cat"], acc: 17 },
+        { img: "猫科动物图片/细腰猫.jpg", alts: ["细腰猫", "Herpailurus yagouaroundi", "Jaguarundi"], acc: 24 },
+        { img: "猫科动物图片/巽他云豹.jpg", alts: ["巽他云豹", "Neofelis diardi", "Sunda Clouded Leopard"], acc: 21 },
+        { img: "猫科动物图片/云豹.jpg", alts: ["云豹", "乌云豹", "Neofelis nebulosa", "Clouded Leopard"], acc: 68 }
+    ];
+
+    // 全局变量（和家猫页面完全一致）
+    let userCorrectIndexes = [];
+    let ended = false;
+    const inputBox = document.getElementById("answerInput");
+    const grid = document.getElementById("quizGrid");
+
+    // 初始化图片网格（核心函数，和家猫页面完全一致）
+    function initGrid() {
+        grid.innerHTML = "";
+        quizData.forEach((item, index) => {
+            const card = document.createElement("div");
+            card.className = "quiz-card";
+            card.id = `card-${index}`;
+            // 正确率进度条颜色逻辑
+            const barColor = item.acc > 60 ? "#28a745" : (item.acc > 30 ? "#ffc107" : "#dc3545");
+            card.innerHTML = `
+                <div class="img-container"><img src="${item.img}" class="quiz-img"></div>
+                <div class="card-info">
+                    <div id="ans-text-${index}" class="user-ans">-</div>
+                    <div class="acc-bar-wrap" id="acc-wrap-${index}">
+                        <div class="acc-bar-fill" style="width:${item.acc}%; background:${barColor}"></div>
+                        <div style="font-size:10px; color:#666; margin-top:2px">正确率: ${item.acc}%</div>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+        updateProgress(); // 更新进度条和计数
+    }
+
+    // 回车触发答题（和家猫页面完全一致）
+    inputBox.addEventListener("keydown", (e) => { 
+        if (e.key === "Enter" && !ended) checkAnswer(); 
+    });
+
+    // 检查答案逻辑（和家猫页面完全一致）
+    function checkAnswer() {
+        const input = inputBox.value.trim().toLowerCase();
+        const message = document.getElementById("message");
+        if (!input) return;
+
+        // 匹配别名/学名/英文名（不区分大小写）
+        let foundIndex = quizData.findIndex(item => 
+            item.alts.some(a => a.toLowerCase() === input)
+        );
+
+        if (foundIndex !== -1) {
+            if (!userCorrectIndexes.includes(foundIndex)) {
+                userCorrectIndexes.push(foundIndex);
+                message.innerHTML = `<span style="color:var(--success-color)">✔ 匹配正确！</span>`;
+                markAsDone(foundIndex, input);
+            } else {
+                message.innerHTML = `<span style="color:orange">⚠ 已识别过该品种</span>`;
+            }
+        } else {
+            message.innerHTML = `<span style="color:var(--danger-color)">✘ 未匹配到相关品种</span>`;
+        }
+        inputBox.value = "";
+        updateProgress();
+    }
+
+    // 标记答对的卡片（和家猫页面完全一致）
+    function markAsDone(index, input) {
+        const card = document.getElementById(`card-${index}`);
+        card.classList.add("done");
+        document.getElementById(`ans-text-${index}`).innerText = input;
+        // 平滑滚动到答对的卡片
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // 更新进度条和计数（和家猫页面完全一致）
+    function updateProgress() {
+        const count = userCorrectIndexes.length;
+        document.getElementById("countInfo").innerText = `${count}/${quizData.length}`;
+        document.getElementById("progressBar").style.width = `${(count/quizData.length)*100}%`;
+    }
+
+    // 正态分布计算打败百分比（和家猫页面完全一致）
+    function calculatePercentile(score) {
+        const mean = 18.5; 
+        const stdDev = 8.0; 
+        const z = (score - mean) / stdDev;
+        const t = 1 / (1 + 0.2315419 * Math.abs(z));
+        const d = 0.3989423 * Math.exp(-z * z / 2);
+        let prob = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+        if (z > 0) prob = 1 - prob;
+        return Math.round(prob * 1000) / 10;
+    }
+
+    // 结束答题统计结果（和家猫页面完全一致）
+    function endQuiz() {
+        ended = true;
+        inputBox.disabled = true;
+        
+        // 显示所有卡片的正确率进度条，标记未答对的卡片
+        quizData.forEach((item, index) => {
+            document.getElementById(`acc-wrap-${index}`).style.display = "block";
+            if (!userCorrectIndexes.includes(index)) {
+                document.getElementById(`card-${index}`).classList.add("missed");
+                document.getElementById(`ans-text-${index}`).innerHTML = `<span style="color:var(--danger-color)">${item.alts[0]}</span>`;
+            }
+        });
+
+        // 计算统计数据
+        const score = userCorrectIndexes.length;
+        const total = quizData.length;
+        const percentile = calculatePercentile(score);
+        const avgScore = 18.5;
+
+        // 渲染统计结果
+        document.getElementById("statSummary").innerHTML = `
+            你获得了 <span>${score}</span> / ${total} 分 (<span>${Math.round(score/total*100)}%</span>)<br>
+            这超过了全球 <span>${percentile}%</span> 的挑战者。<br>
+            全球平均分数是 <span>${avgScore}</span> 分。
+        `;
+        
+        // 显示结果区域，切换按钮状态
+        document.getElementById("resultArea").classList.remove("hidden");
+        document.getElementById("restartBtn").classList.remove("hidden");
+        document.getElementById("endBtn").classList.add("hidden");
+        // 滚动到结果区域
+        window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+    }
+
+    // 重新开始答题（和家猫页面完全一致）
+    function restartQuiz() {
+        location.reload();
+    }
+
+    // 初始化页面（必须调用，和家猫页面一致）
+    initGrid();
+</script>
+</body>
+</html>
