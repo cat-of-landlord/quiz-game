@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>世界国家填图挑战 | 地理问答</title>
+    <style>
+      /* 全局样式重置 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Microsoft YaHei", Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f5f7fa;
+        color: #333;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* 头部样式 */
+      header {
+        background: linear-gradient(135deg, #2c3e50, #34495e);
+        color: white;
+        padding: 1.5rem 2rem;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        flex-shrink: 0;
+        position: relative;
+      }
+
+      .back-btn {
+        position: absolute;
+        left: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        border-radius: 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+
+      .back-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-50%) scale(1.05);
+      }
+
+      .stats-bar {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .stat-item {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1.2rem;
+        border-radius: 20px;
+        font-size: 1rem;
+      }
+
+      .stat-number {
+        font-weight: bold;
+        color: #3498db;
+        font-size: 1.2rem;
+      }
+
+      /* 主容器 */
+      .main-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 2rem 1rem;
+      }
+
+      /* 地图和列表容器 */
+      .content-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        flex: 1;
+      }
+
+      @media (max-width: 992px) {
+        .content-wrapper {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* 地图区域 */
+      .map-section {
+        background: white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        height: 600px;
+      }
+
+      .map-tip {
+        padding: 0.8rem 1rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+        margin-bottom: 0.8rem;
+        font-size: 0.9rem;
+        color: #555;
+        line-height: 1.5;
+        border-left: 3px solid #3498db;
+      }
+
+      .map-wrapper {
+        width: 100%;
+        height: calc(100% - 50px);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      #world-svg {
+        width: 100%;
+        height: 100%;
+        min-width: 800px;
+        min-height: 600px;
+        transition: transform 0.3s ease;
+      }
+
+      /* 区域列表区域 */
+      .region-list {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        max-height: 600px;
+        overflow-y: auto;
+      }
+
+      .continent-group {
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+      }
+
+      .continent-name {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 0.8rem;
+      }
+
+      .subregion-group {
+        margin-bottom: 1rem;
+        padding-left: 0.5rem;
+      }
+
+      .subregion-name {
+        font-size: 1rem;
+        color: #34495e;
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .subregion-progress {
+        font-size: 0.9rem;
+        color: #7f8c8d;
+      }
+
+      .country-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .country-tag {
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        background: #ecf0f1;
+        color: #7f8c8d;
+        transition: all 0.3s;
+        display: none;
+      }
+
+      .country-tag.filled {
+        display: inline-block;
+        background: #2ecc71;
+        color: white;
+      }
+
+      .country-tag.unfilled {
+        display: inline-block;
+        background: #e74c3c;
+        color: white;
+      }
+
+      /* 输入栏区域 */
+      .input-section-container {
+        position: sticky;
+        bottom: 0;
+        background: white;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid #e0e0e0;
+        z-index: 1000;
+        margin-top: auto;
+        transition: all 0.3s ease;
+      }
+
+      .input-section {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .input-wrapper {
+        flex: 1;
+        min-width: 300px;
+        position: relative;
+      }
+
+      #country-input {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+
+      #country-input:focus {
+        border-color: #3498db;
+      }
+
+      /* 按钮样式 */
+      .button-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        white-space: nowrap;
+      }
+
+      .btn-submit {
+        background: #3498db;
+        color: white;
+      }
+
+      .btn-submit:hover {
+        background: #2980b9;
+      }
+
+      .btn-end {
+        background: #9b59b6;
+        color: white;
+      }
+
+      .btn-end:hover {
+        background: #8e44ad;
+      }
+
+      .btn-reset {
+        background: #e74c3c;
+        color: white;
+      }
+
+      .btn-reset:hover {
+        background: #c0392b;
+      }
+
+      /* 提示消息 */
+      .message {
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0.8rem;
+        border-radius: 8px;
+        font-weight: bold;
+        display: none;
+      }
+
+      .success {
+        background: #d5f5e3;
+        color: #27ae60;
+        display: block;
+      }
+
+      .error {
+        background: #fadbd8;
+        color: #e74c3c;
+        display: block;
+      }
+
+      /* 结果弹窗 */
+      .result-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .result-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 800px;
+        width: 95%;
+        max-height: 90vh;
+        overflow-y: auto;
+        text-align: center;
+      }
+
+      .result-title {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+      }
+
+      .result-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .result-stat {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .result-label {
+        color: #7f8c8d;
+      }
+
+      .result-value {
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      .result-accuracy {
+        font-size: 1.2rem;
+        color: #e74c3c;
+      }
+
+      /* 重置按钮 */
+      .reset-section {
+        text-align: center;
+        margin-top: 2rem;
+        flex-shrink: 0;
+      }
+
+      /* 国家名称提示框 - 修改为body下，确保层级最高 */
+      .country-tooltip {
+        position: fixed;
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 0.6rem 1rem;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        pointer-events: none;
+        z-index: 999999;
+        opacity: 0;
+        transition: opacity 0.15s ease;
+        white-space: nowrap;
+      }
+
+      /* 响应式适配 */
+      @media (max-width: 768px) {
+        .main-container {
+          padding: 1rem;
+        }
+
+        .content-wrapper {
+          gap: 1rem;
+        }
+
+        .map-section,
+        .region-list {
+          max-height: 500px;
+        }
+
+        .input-section {
+          flex-direction: column;
+        }
+
+        .input-wrapper {
+          min-width: 100%;
+        }
+
+        .button-group {
+          width: 100%;
+        }
+
+        .btn {
+          flex: 1;
+          text-align: center;
+        }
+
+        .stats-bar {
+          gap: 1rem;
+        }
+
+        .stat-item {
+          padding: 0.3rem 0.8rem;
+          font-size: 0.9rem;
+        }
+
+        .back-btn {
+          padding: 0.3rem 0.8rem;
+          font-size: 0.9rem;
+          left: 1rem;
+        }
+
+        .map-tip {
+          font-size: 0.8rem;
+          padding: 0.6rem 0.8rem;
+        }
+
+        .map-wrapper {
+          height: calc(100% - 45px);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .map-section {
+          height: 400px;
+        }
+
+        .region-list {
+          max-height: 400px;
+        }
+
+        .button-group {
+          flex-direction: column;
+        }
+
+        .btn {
+          width: 100%;
+        }
+      }
+
+      /* 正确率统计区域样式 */
+      .final-stats {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+      }
+
+      .stat-detail {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 5px;
+        line-height: 1.4;
+      }
+      .highlight-val {
+        color: #2c3e50;
+        font-weight: bold;
+      }
+
+      .city-stats-list {
+        margin-top: 20px;
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+      }
+      .city-stat-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+      .bar-container {
+        flex: 1;
+        height: 8px;
+        background-color: #f0f0f0;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .bar-fill {
+        height: 100%;
+        background-color: #ff4444;
+        transition: width 0.3s ease;
+      }
+      .bar-fill.correct {
+        background-color: #4caf50;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 头部：标题和统计 - 新增返回按钮 -->
+    <header>
+      <a href="index.html" class="back-btn">← 返回首页</a>
+      <h1>世界国家填图挑战</h1>
+      <div class="stats-bar">
+        <button
+          id="view-result-btn"
+          class="btn btn-submit"
+          style="display: none; margin-left: 1rem"
+        >
+          查看结果
+        </button>
+
+        <div class="stat-item">
+          已填/总数：<span id="filled-count" class="stat-number">0</span>/<span
+            id="total-count"
+            class="stat-number"
+            >0</span
+          >
+        </div>
+        <div class="stat-item">
+          用时：<span id="timer" class="stat-number">00:00</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 主内容区域 -->
+    <div class="main-container">
+      <!-- 地图和区域列表 -->
+      <div class="content-wrapper">
+        <!-- 地图区域 -->
+        <div class="map-section">
+          <!-- 地图使用提示声明 -->
+          <div class="map-tip">
+            🌍
+            填写规则：1.可以输入国家的中文名或英文名；2.支持简写（如：美国、UK等）；3.地图单击任意位置放大（以点击位置为中心），再次单击复原；4.鼠标悬浮可以显示已答出国家名
+          </div>
+          <div class="map-wrapper" id="map-wrapper">
+            <object
+              id="world-svg"
+              data="世界国家/世界地图.svg"
+              type="image/svg+xml"
+            ></object>
+          </div>
+        </div>
+
+        <!-- 区域列表区域 -->
+        <div class="region-list" id="region-list"></div>
+      </div>
+
+      <!-- 重置按钮 -->
+      <div class="reset-section">
+        <button id="reset-btn" class="btn btn-reset">重新开始挑战</button>
+      </div>
+    </div>
+
+    <!-- 输入栏（固定在底部） -->
+    <div class="input-section-container">
+      <div class="input-section">
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="country-input"
+            placeholder="输入国家名称（支持中文名、英文名或简写）"
+            autocomplete="off"
+          />
+        </div>
+        <div class="button-group">
+          <button id="submit-btn" class="btn btn-submit">提交答案</button>
+          <button id="end-btn" class="btn btn-end">结束挑战</button>
+        </div>
+        <div class="message" id="message"></div>
+      </div>
+    </div>
+
+    <!-- 结果弹窗 -->
+    <div class="result-modal" id="result-modal">
+      <div class="result-content">
+        <h2 class="result-title">挑战结束！</h2>
+        <div id="final-stats" class="final-stats"></div>
+        <div class="result-stats" id="result-stats"></div>
+        <button id="close-result-btn" class="btn btn-reset">关闭</button>
+        <div class="city-stats-list" id="city-stats-list">
+          <h3 style="margin-bottom: 1rem; font-size: 1.1rem; color: #2c3e50">
+            国家识别情况（绿色为您答对）
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- 国家名称提示框 - 移到body下确保层级最高 -->
+    <div class="country-tooltip" id="country-tooltip"></div>
+
+    <script>
+      // 核心数据存储
+      let countryData = [];
+      let allCountries = [];
+      let countryInfoMap = {}; // 用于存储countries.json中的详细信息
+      let filledCountries = new Set();
+      let totalAttempts = 0;
+      let correctAttempts = 0;
+      let timerInterval = null;
+      let startTime = 0;
+      let isGameEnded = false;
+
+      // 地图缩放相关变量
+      let isZoomed = false;
+      let scale = 1;
+      let translateX = 0;
+      let translateY = 0;
+
+      // 提示框元素 - 现在在body下
+      const tooltip = document.getElementById("country-tooltip");
+
+      // 存储国家原始颜色
+      let originalColors = new Map();
+
+      // 简写映射表
+      const shortNameMap = {
+        // 中文简写
+        美国: "United States of America",
+        英国: "United Kingdom",
+        法国: "France",
+        德国: "Germany",
+        意大利: "Italy",
+        西班牙: "Spain",
+        俄罗斯: "Russia",
+        日本: "Japan",
+        韩国: "South Korea",
+        朝鲜: "North Korea",
+        印度: "India",
+        澳大利亚: "Australia",
+        加拿大: "Canada",
+        巴西: "Brazil",
+        阿根廷: "Argentina",
+        墨西哥: "Mexico",
+        埃及: "Egypt",
+        南非: "South Africa",
+        中国: "People's Republic of China",
+        列支敦士登: "Liechtenstein",
+        白俄罗斯: "Belarus",
+        印度尼西亚: "Indonesia",
+        波黑: "Bosnia and Herzegovina",
+        // 英文简写
+        USA: "United States of America",
+        US: "United States of America",
+        UK: "United Kingdom",
+        GB: "United Kingdom",
+        PRC: "People's Republic of China",
+        China: "People's Republic of China",
+        ROC: "Republic of China",
+        ROK: "Republic of Korea",
+        DPRK: "Democratic People's Republic of Korea",
+        UAE: "United Arab Emirates",
+        KSA: "Saudi Arabia",
+
+        // 特别行政区
+        香港: "Hong Kong",
+        澳门: "Macau",
+        台湾: "Taiwan",
+        Taiwan: "Taiwan",
+      };
+
+      // 初始化函数
+      async function init() {
+        try {
+          // 同时加载两个JSON文件
+          const [countryListData, countryInfoData] = await Promise.all([
+            fetch("世界国家/country_data.json").then((r) => r.json()),
+            fetch("世界国家/countries.json").then((r) => r.json()),
+          ]);
+
+          // 处理国家数据
+          countryData = countryListData.countries;
+          countryInfoMap = {};
+
+          // 创建国家信息映射
+          countryInfoData.forEach((country) => {
+            countryInfoMap[country.id] = country;
+          });
+
+          // 整理所有国家列表
+          allCountries = countryData.map((item) => {
+            // 从country_info中获取详细信息
+            let svgId = item.svgId;
+            let countryInfo = null;
+
+            // 如果是数组，取第一个元素查找
+            if (Array.isArray(svgId)) {
+              for (let id of svgId) {
+                if (countryInfoMap[id]) {
+                  countryInfo = countryInfoMap[id];
+                  break;
+                }
+              }
+            } else if (countryInfoMap[svgId]) {
+              countryInfo = countryInfoMap[svgId];
+            }
+
+            return {
+              name: item.name,
+              svgId: item.svgId,
+              continent: item.continent,
+              subRegion: item.subRegion,
+              accuracy: item.accuracy || 0,
+              name_zh: countryInfo ? countryInfo.name_zh : item.name,
+              name_en: countryInfo ? countryInfo.name_en : item.name,
+              formal_en: countryInfo ? countryInfo.formal_en : item.name,
+            };
+          });
+
+          console.log("国家数据加载完成，总数：", allCountries.length);
+
+          // 更新总数量
+          document.getElementById("total-count").textContent =
+            allCountries.length;
+
+          // 渲染区域列表
+          renderRegionList();
+
+          // 初始化SVG交互
+          initSVGInteraction();
+
+          // 启动计时器
+          startTimer();
+        } catch (error) {
+          showMessage("加载数据失败，请检查JSON文件是否在正确目录！", "error");
+          console.error("数据加载错误：", error);
+        }
+      }
+
+      // 正态分布 CDF（误差函数近似）
+      function normalCDF(z) {
+        return (1.0 + erf(z / Math.sqrt(2))) / 2.0;
+      }
+
+      // 误差函数 erf 近似
+      function erf(x) {
+        const sign = x >= 0 ? 1 : -1;
+        x = Math.abs(x);
+
+        const a1 = 0.254829592;
+        const a2 = -0.284496736;
+        const a3 = 1.421413741;
+        const a4 = -1.453152027;
+        const a5 = 1.061405429;
+        const p = 0.3275911;
+
+        const t = 1 / (1 + p * x);
+        const y =
+          1 -
+          ((((a5 * t + a4) * t + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+
+        return sign * y;
+      }
+
+      // 渲染区域列表
+      function renderRegionList() {
+        const listContainer = document.getElementById("region-list");
+        listContainer.innerHTML = "";
+
+        // 按大洲和子区域分组
+        const groupedByContinent = {};
+
+        allCountries.forEach((country) => {
+          const continent = country.continent || "其他";
+          const subRegion = country.subRegion || "未分类";
+
+          if (!groupedByContinent[continent]) {
+            groupedByContinent[continent] = {};
+          }
+
+          if (!groupedByContinent[continent][subRegion]) {
+            groupedByContinent[continent][subRegion] = [];
+          }
+
+          groupedByContinent[continent][subRegion].push(country);
+        });
+
+        // 渲染每个大洲
+        for (const continent in groupedByContinent) {
+          const continentGroup = document.createElement("div");
+          continentGroup.className = "continent-group";
+
+          const continentName = document.createElement("div");
+          continentName.className = "continent-name";
+          continentName.textContent = continent;
+
+          continentGroup.appendChild(continentName);
+
+          // 渲染每个子区域
+          for (const subRegion in groupedByContinent[continent]) {
+            const countries = groupedByContinent[continent][subRegion];
+            const filledInSubregion = countries.filter((country) =>
+              filledCountries.has(country.name)
+            ).length;
+
+            const subregionGroup = document.createElement("div");
+            subregionGroup.className = "subregion-group";
+
+            const subregionName = document.createElement("div");
+            subregionName.className = "subregion-name";
+            subregionName.innerHTML = `
+                        ${subRegion} 
+                        <span class="subregion-progress">${filledInSubregion}/${countries.length}</span>
+                    `;
+
+            const countryTags = document.createElement("div");
+            countryTags.className = "country-tags";
+
+            countries.forEach((country) => {
+              const countryTag = document.createElement("div");
+
+              // 如果游戏已结束，显示所有国家
+              if (isGameEnded) {
+                if (filledCountries.has(country.name)) {
+                  countryTag.className = "country-tag filled";
+                } else {
+                  countryTag.className = "country-tag unfilled";
+                }
+              } else {
+                // 游戏进行中，只显示已答出的国家
+                countryTag.className = `country-tag ${
+                  filledCountries.has(country.name) ? "filled" : ""
+                }`;
+              }
+
+              countryTag.textContent = country.name;
+              countryTags.appendChild(countryTag);
+            });
+
+            subregionGroup.appendChild(subregionName);
+            subregionGroup.appendChild(countryTags);
+            continentGroup.appendChild(subregionGroup);
+          }
+
+          listContainer.appendChild(continentGroup);
+        }
+      }
+
+      // 初始化SVG交互
+      function initSVGInteraction() {
+        const svgObj = document.getElementById("world-svg");
+        const mapWrapper = document.getElementById("map-wrapper");
+
+        svgObj.addEventListener("load", function () {
+          const svgDoc = this.contentDocument;
+          if (!svgDoc) return;
+          const svgElement = svgDoc.querySelector("svg");
+          if (!svgElement) return;
+
+          // 单击缩放
+          svgDoc.addEventListener("click", (e) => {
+            const clickX = e.clientX;
+            const clickY = e.clientY;
+            toggleZoom(svgElement, clickX, clickY);
+          });
+
+          // 绑定国家路径的交互
+          const countryPaths = svgDoc.querySelectorAll(
+            "path, polygon, circle, ellipse, rect"
+          );
+          countryPaths.forEach((elem) => {
+            const countryId = elem.id;
+            if (!countryId) return;
+
+            // 查找对应的国家
+            const country = allCountries.find((c) => {
+              if (Array.isArray(c.svgId)) {
+                return c.svgId.includes(countryId);
+              }
+              return c.svgId === countryId;
+            });
+
+            if (!country) return;
+
+            // 保存原始颜色
+            const originalColor =
+              elem.style.fill || window.getComputedStyle(elem).fill;
+            originalColors.set(countryId, originalColor);
+
+            elem.style.cursor = "pointer";
+
+            // 鼠标悬停事件
+            elem.addEventListener("mouseover", function (e) {
+              if (isGameEnded || filledCountries.has(country.name)) {
+                showTooltip(e, country.name);
+              }
+            });
+
+            elem.addEventListener("mousemove", function (e) {
+              if (isGameEnded || filledCountries.has(country.name)) {
+                updateTooltipPosition(e);
+              }
+            });
+
+            elem.addEventListener("mouseout", function () {
+              hideTooltip();
+            });
+          });
+        });
+      }
+
+      // 切换缩放
+      function toggleZoom(svgElement, clickX, clickY) {
+        if (isZoomed) {
+          svgElement.style.transform = `translate(0px, 0px) scale(1)`;
+          isZoomed = false;
+          document.getElementById("map-wrapper").style.cursor = "zoom-in";
+        } else {
+          const zoomScale = 2.5;
+          const rect = document
+            .getElementById("map-wrapper")
+            .getBoundingClientRect();
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          translateX = centerX - clickX * zoomScale;
+          translateY = centerY - clickY * zoomScale;
+
+          svgElement.style.transition =
+            "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)";
+          svgElement.style.transformOrigin = "0 0";
+          svgElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoomScale})`;
+
+          isZoomed = true;
+          document.getElementById("map-wrapper").style.cursor = "zoom-out";
+        }
+      }
+
+      // 匹配国家名称
+      function matchCountry(input) {
+        const normalizedInput = input.trim();
+
+        // 1. 尝试完全匹配中文名
+        const exactChineseMatch = allCountries.find(
+          (country) =>
+            country.name === normalizedInput ||
+            country.name_zh === normalizedInput
+        );
+        if (exactChineseMatch) return exactChineseMatch;
+
+        // 2. 尝试完全匹配英文名
+        const exactEnglishMatch = allCountries.find(
+          (country) =>
+            country.name_en === normalizedInput ||
+            country.formal_en === normalizedInput ||
+            (country.name_en &&
+              country.name_en.toLowerCase() ===
+                normalizedInput.toLowerCase()) ||
+            (country.formal_en &&
+              country.formal_en.toLowerCase() === normalizedInput.toLowerCase())
+        );
+        if (exactEnglishMatch) return exactEnglishMatch;
+
+        // 3. 尝试简写映射
+        if (shortNameMap[normalizedInput]) {
+          const shortName = shortNameMap[normalizedInput];
+          const shortNameMatch = allCountries.find(
+            (country) =>
+              country.name_en === shortName ||
+              country.formal_en === shortName ||
+              (country.name_en &&
+                country.name_en.toLowerCase() === shortName.toLowerCase())
+          );
+          if (shortNameMatch) return shortNameMatch;
+        }
+
+        // 4. 尝试部分匹配
+        const partialMatch = allCountries.find((country) => {
+          // 检查中文名包含输入
+          if (
+            country.name.includes(normalizedInput) ||
+            country.name_zh.includes(normalizedInput)
+          ) {
+            return true;
+          }
+
+          // 检查英文名包含输入（不区分大小写）
+          if (
+            (country.name_en &&
+              country.name_en
+                .toLowerCase()
+                .includes(normalizedInput.toLowerCase())) ||
+            (country.formal_en &&
+              country.formal_en
+                .toLowerCase()
+                .includes(normalizedInput.toLowerCase()))
+          ) {
+            return true;
+          }
+
+          return false;
+        });
+
+        return partialMatch || null;
+      }
+
+      // 提交国家答案
+      function submitCountry(input) {
+        if (isGameEnded) return;
+
+        totalAttempts++;
+        const matchedCountry = matchCountry(input);
+
+        if (!matchedCountry) {
+          showMessage(`❌ 无法识别【${input}】，请检查输入！`, "error");
+          return;
+        }
+
+        // 检查是否已填写
+        if (filledCountries.has(matchedCountry.name)) {
+          showMessage(`你已经填写过【${matchedCountry.name}】啦！`, "error");
+          return;
+        }
+
+        // 正确答案处理
+        correctAttempts++;
+        filledCountries.add(matchedCountry.name);
+
+        // 更新统计
+        updateStats();
+
+        // 更新SVG样式
+        updateSVGCountryStyle(matchedCountry);
+
+        // 更新区域列表
+        renderRegionList();
+
+        // 提示成功
+        showMessage(`✅ 正确！已填写【${matchedCountry.name}】`, "success");
+
+        // 清空输入框并自动聚焦
+        const inputElement = document.getElementById("country-input");
+        inputElement.value = "";
+        inputElement.focus();
+
+        // 检查是否全部完成
+        if (filledCountries.size === allCountries.length) {
+          endGame();
+        }
+      }
+
+      // 更新SVG中国家样式
+      function updateSVGCountryStyle(country) {
+        const svgObj = document.getElementById("world-svg");
+        const svgDoc = svgObj.contentDocument;
+        if (!svgDoc) return;
+
+        // 根据svgId查找对应的元素
+        let selectors = [];
+        if (Array.isArray(country.svgId)) {
+          selectors = country.svgId.map((id) => `#${id}`);
+        } else {
+          selectors = [`#${country.svgId}`];
+        }
+
+        selectors.forEach((selector) => {
+          const elements = svgDoc.querySelectorAll(selector);
+          elements.forEach((elem) => {
+            elem.style.fill = "#2ecc71";
+            elem.style.transition = "fill 0.3s";
+          });
+        });
+      }
+
+      // 更新统计数据
+      function updateStats() {
+        document.getElementById("filled-count").textContent =
+          filledCountries.size;
+      }
+
+      // 启动计时器
+      function startTimer() {
+        startTime = Date.now();
+        timerInterval = setInterval(() => {
+          const elapsed = Math.floor((Date.now() - startTime) / 1000);
+          const minutes = Math.floor(elapsed / 60)
+            .toString()
+            .padStart(2, "0");
+          const seconds = (elapsed % 60).toString().padStart(2, "0");
+          document.getElementById(
+            "timer"
+          ).textContent = `${minutes}:${seconds}`;
+        }, 1000);
+      }
+
+      // 结束游戏
+      function endGame() {
+        if (isGameEnded) return;
+        isGameEnded = true;
+        clearInterval(timerInterval);
+
+        // 更新区域列表，显示所有国家
+        renderRegionList();
+
+        // 计算统计
+        const totalCountries = allCountries.length;
+        const accuracy = Math.round(
+          (filledCountries.size / totalCountries) * 100
+        );
+        const time = document.getElementById("timer").textContent;
+
+        // 显示结果
+        showResult(accuracy, time);
+
+        showMessage("🎉 游戏结束！查看结果统计", "success");
+      }
+
+      // 显示结果弹窗
+      function showResult(accuracy, time) {
+        const userScore = filledCountries.size;
+
+        // === 统计假设 ===
+        const meanScore = 119;
+        const stdDev = 20;
+
+        const z = (userScore - meanScore) / stdDev;
+        const percentile = Math.round(normalCDF(z) * 100);
+
+        const resultStats = document.getElementById("result-stats");
+        resultStats.innerHTML = `
+        <div class="result-stat">
+            <span class="result-label">你的得分</span>
+            <span class="result-value">${userScore}</span>
+        </div>
+        <div class="result-stat">
+            <span class="result-label">平均得分</span>
+            <span class="result-value">${meanScore}</span>
+        </div>
+        <div class="result-stat">
+            <span class="result-label">超过用户比例</span>
+            <span class="result-value result-accuracy">
+                超过 ${percentile}% 的用户
+            </span>
+        </div>
+        <div class="result-stat">
+            <span class="result-label">完成国家</span>
+            <span class="result-value">${userScore}/${allCountries.length}</span>
+        </div>
+        <div class="result-stat">
+            <span class="result-label">总用时</span>
+            <span class="result-value">${time}</span>
+        </div>
+        <div class="result-stat">
+            <span class="result-label">正确率</span>
+            <span class="result-value">${accuracy}%</span>
+        </div>
+    `;
+
+        renderCountryStatsList();
+        document.getElementById("result-modal").style.display = "flex";
+
+        // 显示“再次查看结果”按钮
+        document.getElementById("view-result-btn").style.display =
+          "inline-block";
+      }
+
+      // 渲染国家统计列表
+      function renderCountryStatsList() {
+        const listContainer = document.getElementById("city-stats-list");
+        listContainer.innerHTML =
+          '<h3 style="margin-bottom: 1rem; font-size: 1.1rem; color: #2c3e50;">国家识别情况（绿色为您答对）</h3>';
+
+        // 按大洲分组显示
+        const groupedByContinent = {};
+        allCountries.forEach((country) => {
+          const continent = country.continent || "其他";
+          if (!groupedByContinent[continent]) {
+            groupedByContinent[continent] = [];
+          }
+          groupedByContinent[continent].push(country);
+        });
+
+        // 对每个大洲的国家按字母排序
+        for (const continent in groupedByContinent) {
+          const continentHeader = document.createElement("h4");
+          continentHeader.style.margin = "0.5rem 0";
+          continentHeader.style.color = "#34495e";
+          continentHeader.textContent = continent;
+          listContainer.appendChild(continentHeader);
+
+          const countries = groupedByContinent[continent].sort((a, b) =>
+            a.name.localeCompare(b.name, "zh-CN")
+          );
+
+          countries.forEach((country) => {
+            const isAnsweredCorrectly = filledCountries.has(country.name);
+
+            const row = document.createElement("div");
+            row.className = "city-stat-row";
+
+            const countryNameCol = document.createElement("div");
+            countryNameCol.className = "city-name";
+            countryNameCol.textContent = country.name;
+
+            const barContainer = document.createElement("div");
+            barContainer.className = "bar-container";
+
+            const barFill = document.createElement("div");
+            barFill.className = `bar-fill ${
+              isAnsweredCorrectly ? "correct" : ""
+            }`;
+            barFill.style.width = `${Math.min(country.accuracy || 50, 100)}%`;
+
+            const percentCol = document.createElement("div");
+            percentCol.className = "percent-text";
+            percentCol.textContent = `${country.accuracy || "N/A"}`;
+
+            barContainer.appendChild(barFill);
+            row.appendChild(countryNameCol);
+            row.appendChild(barContainer);
+            row.appendChild(percentCol);
+            listContainer.appendChild(row);
+          });
+        }
+      }
+
+      // 显示提示消息
+      function showMessage(text, type) {
+        const messageEl = document.getElementById("message");
+        messageEl.textContent = text;
+        messageEl.className = `message ${type}`;
+
+        setTimeout(() => {
+          messageEl.className = "message";
+        }, 3000);
+      }
+
+      // 显示提示框
+      function showTooltip(e, countryName) {
+        tooltip.textContent = countryName;
+        tooltip.style.opacity = 1;
+        updateTooltipPosition(e);
+      }
+
+      // 更新提示框位置
+      function updateTooltipPosition(e) {
+        const offset = 12;
+
+        let x = e.clientX + offset;
+        let y = e.clientY + offset;
+
+        const tooltipRect = tooltip.getBoundingClientRect();
+
+        // 防止超出右边界
+        if (x + tooltipRect.width > window.innerWidth) {
+          x = e.clientX - tooltipRect.width - offset;
+        }
+
+        // 防止超出下边界
+        if (y + tooltipRect.height > window.innerHeight) {
+          y = e.clientY - tooltipRect.height - offset;
+        }
+
+        tooltip.style.left = `${x}px`;
+        tooltip.style.top = `${y}px`;
+      }
+
+      // 隐藏提示框
+      function hideTooltip() {
+        tooltip.style.opacity = 0;
+      }
+
+      // 重置挑战
+      function resetChallenge() {
+        filledCountries.clear();
+        totalAttempts = 0;
+        correctAttempts = 0;
+        isGameEnded = false;
+
+        isZoomed = false;
+        scale = 1;
+        translateX = 0;
+        translateY = 0;
+
+        clearInterval(timerInterval);
+        startTimer();
+
+        updateStats();
+        renderRegionList();
+
+        // 重置SVG样式 - 使用保存的原始颜色
+        const svgObj = document.getElementById("world-svg");
+        if (svgObj.contentDocument) {
+          const countryPaths = svgObj.contentDocument.querySelectorAll(
+            "path, polygon, circle, ellipse, rect"
+          );
+          countryPaths.forEach((elem) => {
+            const countryId = elem.id;
+            if (countryId && originalColors.has(countryId)) {
+              elem.style.fill = originalColors.get(countryId);
+            }
+          });
+
+          // 重置地图缩放
+          const svgElement = svgObj.contentDocument.querySelector("svg");
+          if (svgElement) {
+            svgElement.style.transform = `translate(0px, 0px) scale(1)`;
+            svgElement.style.transformOrigin = "0 0";
+          }
+        }
+
+        // 隐藏提示框
+        hideTooltip();
+
+        // 聚焦输入框
+        document.getElementById("country-input").focus();
+
+        showMessage("🔄 已重置挑战，重新开始！", "success");
+      }
+
+      // 事件监听
+      document.addEventListener("DOMContentLoaded", () => {
+        // 初始化
+        init();
+
+        // 提交按钮点击
+        document.getElementById("submit-btn").addEventListener("click", () => {
+          const input = document.getElementById("country-input").value.trim();
+          if (input) {
+            submitCountry(input);
+          } else {
+            showMessage("请输入国家名称！", "error");
+          }
+        });
+
+        // 结束按钮点击
+        document.getElementById("end-btn").addEventListener("click", () => {
+          if (!isGameEnded) {
+            endGame();
+          }
+        });
+
+        // 输入框回车提交
+        document
+          .getElementById("country-input")
+          .addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+              const input = e.target.value.trim();
+              if (input) {
+                submitCountry(input);
+              }
+            }
+          });
+
+        // 重置按钮
+        document
+          .getElementById("reset-btn")
+          .addEventListener("click", resetChallenge);
+
+        // 关闭结果弹窗
+        document
+          .getElementById("close-result-btn")
+          .addEventListener("click", () => {
+            document.getElementById("result-modal").style.display = "none";
+          });
+
+        // 点击弹窗外部关闭
+        document
+          .getElementById("result-modal")
+          .addEventListener("click", (e) => {
+            if (e.target === document.getElementById("result-modal")) {
+              document.getElementById("result-modal").style.display = "none";
+            }
+          });
+
+        // 初始聚焦输入框
+        document.getElementById("country-input").focus();
+      });
+      document
+        .getElementById("view-result-btn")
+        .addEventListener("click", () => {
+          document.getElementById("result-modal").style.display = "flex";
+        });
+    </script>
+  </body>
+</html>

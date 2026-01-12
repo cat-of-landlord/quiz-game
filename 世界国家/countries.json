@@ -1,0 +1,1978 @@
+[
+  {
+    "id": "印度尼西亚",
+    "name_zh": "印度尼西亞",
+    "name_en": "Indonesia",
+    "formal_en": "Republic of Indonesia",
+    "type": "Sovereign country",
+    "sovereignty": "Indonesia"
+  },
+  {
+    "id": "马来西亚",
+    "name_zh": "馬來西亞",
+    "name_en": "Malaysia",
+    "formal_en": "Malaysia",
+    "type": "Sovereign country",
+    "sovereignty": "Malaysia"
+  },
+  {
+    "id": "智利",
+    "name_zh": "智利",
+    "name_en": "Chile",
+    "formal_en": "Republic of Chile",
+    "type": "Sovereign country",
+    "sovereignty": "Chile"
+  },
+  {
+    "id": "玻利维亚",
+    "name_zh": "玻利維亞",
+    "name_en": "Bolivia",
+    "formal_en": "Plurinational State of Bolivia",
+    "type": "Sovereign country",
+    "sovereignty": "Bolivia"
+  },
+  {
+    "id": "秘鲁",
+    "name_zh": "秘魯",
+    "name_en": "Peru",
+    "formal_en": "Republic of Peru",
+    "type": "Sovereign country",
+    "sovereignty": "Peru"
+  },
+  {
+    "id": "阿根廷",
+    "name_zh": "阿根廷",
+    "name_en": "Argentina",
+    "formal_en": "Argentine Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Argentina"
+  },
+  {
+    "id": "uk-out",
+    "name_zh": "uk-out",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "塞浦路斯",
+    "name_zh": "賽普勒斯",
+    "name_en": "Cyprus",
+    "formal_en": "Republic of Cyprus",
+    "type": "Sovereign country",
+    "sovereignty": "Cyprus"
+  },
+  {
+    "id": "印度",
+    "name_zh": "印度",
+    "name_en": "India",
+    "formal_en": "Republic of India",
+    "type": "Sovereign country",
+    "sovereignty": "India"
+  },
+  {
+    "id": "中华人民共和国",
+    "name_zh": "中華人民共和國",
+    "name_en": "People's Republic of China",
+    "formal_en": "People's Republic of China",
+    "type": "Country",
+    "sovereignty": "China"
+  },
+  {
+    "id": "以色列",
+    "name_zh": "以色列",
+    "name_en": "Israel",
+    "formal_en": "State of Israel",
+    "type": "Disputed",
+    "sovereignty": "Israel"
+  },
+  {
+    "id": "巴勒斯坦",
+    "name_zh": "巴勒斯坦地區",
+    "name_en": "Palestine",
+    "formal_en": "West Bank and Gaza",
+    "type": "Indeterminate",
+    "sovereignty": "Israel"
+  },
+  {
+    "id": "黎巴嫩",
+    "name_zh": "黎巴嫩",
+    "name_en": "Lebanon",
+    "formal_en": "Lebanese Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Lebanon"
+  },
+  {
+    "id": "埃塞俄比亚",
+    "name_zh": "衣索比亞",
+    "name_en": "Ethiopia",
+    "formal_en": "Federal Democratic Republic of Ethiopia",
+    "type": "Sovereign country",
+    "sovereignty": "Ethiopia"
+  },
+  {
+    "id": "南苏丹",
+    "name_zh": "南蘇丹",
+    "name_en": "South Sudan",
+    "formal_en": "Republic of South Sudan",
+    "type": "Sovereign country",
+    "sovereignty": "South Sudan"
+  },
+  {
+    "id": "索马里",
+    "name_zh": "索馬利亞",
+    "name_en": "Somalia",
+    "formal_en": "Federal Republic of Somalia",
+    "type": "Sovereign country",
+    "sovereignty": "Somalia"
+  },
+  {
+    "id": "马拉维",
+    "name_zh": "馬拉威",
+    "name_en": "Malawi",
+    "formal_en": "Republic of Malawi",
+    "type": "Sovereign country",
+    "sovereignty": "Malawi"
+  },
+  {
+    "id": "坦桑尼亚",
+    "name_zh": "坦尚尼亞",
+    "name_en": "Tanzania",
+    "formal_en": "United Republic of Tanzania",
+    "type": "Sovereign country",
+    "sovereignty": "United Republic of Tanzania"
+  },
+  {
+    "id": "叙利亚",
+    "name_zh": "敘利亞",
+    "name_en": "Syria",
+    "formal_en": "Syrian Arab Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Syria"
+  },
+  {
+    "id": "法国",
+    "name_zh": "法國",
+    "name_en": "France",
+    "formal_en": "French Republic",
+    "type": "Country",
+    "sovereignty": "France"
+  },
+  {
+    "id": "苏里南",
+    "name_zh": "蘇利南",
+    "name_en": "Suriname",
+    "formal_en": "Republic of Suriname",
+    "type": "Sovereign country",
+    "sovereignty": "Suriname"
+  },
+  {
+    "id": "圭亚那",
+    "name_zh": "圭亞那",
+    "name_en": "Guyana",
+    "formal_en": "Co-operative Republic of Guyana",
+    "type": "Sovereign country",
+    "sovereignty": "Guyana"
+  },
+  {
+    "id": "大韩民国",
+    "name_zh": "大韓民國",
+    "name_en": "South Korea",
+    "formal_en": "Republic of Korea",
+    "type": "Sovereign country",
+    "sovereignty": "South Korea"
+  },
+  {
+    "id": "朝鲜民主主义人民共和国",
+    "name_zh": "朝鮮民主主義人民共和國",
+    "name_en": "North Korea",
+    "formal_en": "Democratic People's Republic of Korea",
+    "type": "Sovereign country",
+    "sovereignty": "North Korea"
+  },
+  {
+    "id": "西撒哈拉",
+    "name_zh": "西撒哈拉",
+    "name_en": "Western Sahara",
+    "formal_en": "Sahrawi Arab Democratic Republic",
+    "type": "Indeterminate",
+    "sovereignty": "Western Sahara"
+  },
+  {
+    "id": "哥斯达黎加",
+    "name_zh": "哥斯大黎加",
+    "name_en": "Costa Rica",
+    "formal_en": "Republic of Costa Rica",
+    "type": "Sovereign country",
+    "sovereignty": "Costa Rica"
+  },
+  {
+    "id": "尼加拉瓜",
+    "name_zh": "尼加拉瓜",
+    "name_en": "Nicaragua",
+    "formal_en": "Republic of Nicaragua",
+    "type": "Sovereign country",
+    "sovereignty": "Nicaragua"
+  },
+  {
+    "id": "刚果共和国",
+    "name_zh": "剛果共和國",
+    "name_en": "Republic of the Congo",
+    "formal_en": "Republic of the Congo",
+    "type": "Sovereign country",
+    "sovereignty": "Republic of the Congo"
+  },
+  {
+    "id": "刚果民主共和国",
+    "name_zh": "剛果民主共和國",
+    "name_en": "Democratic Republic of the Congo",
+    "formal_en": "Democratic Republic of the Congo",
+    "type": "Sovereign country",
+    "sovereignty": "Democratic Republic of the Congo"
+  },
+  {
+    "id": "不丹",
+    "name_zh": "不丹",
+    "name_en": "Bhutan",
+    "formal_en": "Kingdom of Bhutan",
+    "type": "Sovereign country",
+    "sovereignty": "Bhutan"
+  },
+  {
+    "id": "乌克兰",
+    "name_zh": "烏克蘭",
+    "name_en": "Ukraine",
+    "formal_en": "Ukraine",
+    "type": "Sovereign country",
+    "sovereignty": "Ukraine"
+  },
+  {
+    "id": "白俄罗斯",
+    "name_zh": "白俄羅斯",
+    "name_en": "Belarus",
+    "formal_en": "Republic of Belarus",
+    "type": "Sovereign country",
+    "sovereignty": "Belarus"
+  },
+  {
+    "id": "纳米比亚",
+    "name_zh": "納米比亞",
+    "name_en": "Namibia",
+    "formal_en": "Republic of Namibia",
+    "type": "Sovereign country",
+    "sovereignty": "Namibia"
+  },
+  {
+    "id": "南非",
+    "name_zh": "南非",
+    "name_en": "South Africa",
+    "formal_en": "Republic of South Africa",
+    "type": "Sovereign country",
+    "sovereignty": "South Africa"
+  },
+  {
+    "id": "法属圣马丁",
+    "name_zh": "法属圣马丁",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "netherlands-out",
+    "name_zh": "netherlands-out",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "阿曼",
+    "name_zh": "阿曼",
+    "name_en": "Oman",
+    "formal_en": "Sultanate of Oman",
+    "type": "Sovereign country",
+    "sovereignty": "Oman"
+  },
+  {
+    "id": "乌兹别克斯坦",
+    "name_zh": "烏茲別克",
+    "name_en": "Uzbekistan",
+    "formal_en": "Republic of Uzbekistan",
+    "type": "Sovereign country",
+    "sovereignty": "Uzbekistan"
+  },
+  {
+    "id": "哈萨克斯坦",
+    "name_zh": "哈薩克",
+    "name_en": "Kazakhstan",
+    "formal_en": "Republic of Kazakhstan",
+    "type": "Sovereignty",
+    "sovereignty": "Kazakhstan"
+  },
+  {
+    "id": "塔吉克斯坦",
+    "name_zh": "塔吉克",
+    "name_en": "Tajikistan",
+    "formal_en": "Republic of Tajikistan",
+    "type": "Sovereign country",
+    "sovereignty": "Tajikistan"
+  },
+  {
+    "id": "立陶宛",
+    "name_zh": "立陶宛",
+    "name_en": "Lithuania",
+    "formal_en": "Republic of Lithuania",
+    "type": "Sovereign country",
+    "sovereignty": "Lithuania"
+  },
+  {
+    "id": "巴西",
+    "name_zh": "巴西",
+    "name_en": "Brazil",
+    "formal_en": "Federative Republic of Brazil",
+    "type": "Sovereign country",
+    "sovereignty": "Brazil"
+  },
+  {
+    "id": "乌拉圭",
+    "name_zh": "烏拉圭",
+    "name_en": "Uruguay",
+    "formal_en": "Oriental Republic of Uruguay",
+    "type": "Sovereign country",
+    "sovereignty": "Uruguay"
+  },
+  {
+    "id": "蒙古国",
+    "name_zh": "蒙古國",
+    "name_en": "Mongolia",
+    "formal_en": "Mongolia",
+    "type": "Sovereign country",
+    "sovereignty": "Mongolia"
+  },
+  {
+    "id": "俄罗斯",
+    "name_zh": "俄羅斯",
+    "name_en": "Russia",
+    "formal_en": "Russian Federation",
+    "type": "Sovereign country",
+    "sovereignty": "Russia"
+  },
+  {
+    "id": "捷克",
+    "name_zh": "捷克共和國",
+    "name_en": "Czech Republic",
+    "formal_en": "Czech Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Czechia"
+  },
+  {
+    "id": "德国",
+    "name_zh": "德國",
+    "name_en": "Germany",
+    "formal_en": "Federal Republic of Germany",
+    "type": "Sovereign country",
+    "sovereignty": "Germany"
+  },
+  {
+    "id": "爱沙尼亚",
+    "name_zh": "愛沙尼亞",
+    "name_en": "Estonia",
+    "formal_en": "Republic of Estonia",
+    "type": "Sovereign country",
+    "sovereignty": "Estonia"
+  },
+  {
+    "id": "拉脱维亚",
+    "name_zh": "拉脫維亞",
+    "name_en": "Latvia",
+    "formal_en": "Republic of Latvia",
+    "type": "Sovereign country",
+    "sovereignty": "Latvia"
+  },
+  {
+    "id": "挪威",
+    "name_zh": "挪威",
+    "name_en": "Norway",
+    "formal_en": "Kingdom of Norway",
+    "type": "Sovereign country",
+    "sovereignty": "Norway"
+  },
+  {
+    "id": "瑞典",
+    "name_zh": "瑞典",
+    "name_en": "Sweden",
+    "formal_en": "Kingdom of Sweden",
+    "type": "Sovereign country",
+    "sovereignty": "Sweden"
+  },
+  {
+    "id": "芬兰",
+    "name_zh": "芬蘭",
+    "name_en": "Finland",
+    "formal_en": "Republic of Finland",
+    "type": "Country",
+    "sovereignty": "Finland"
+  },
+  {
+    "id": "越南",
+    "name_zh": "越南",
+    "name_en": "Vietnam",
+    "formal_en": "Socialist Republic of Vietnam",
+    "type": "Sovereign country",
+    "sovereignty": "Vietnam"
+  },
+  {
+    "id": "柬埔寨",
+    "name_zh": "柬埔寨",
+    "name_en": "Cambodia",
+    "formal_en": "Kingdom of Cambodia",
+    "type": "Sovereign country",
+    "sovereignty": "Cambodia"
+  },
+  {
+    "id": "卢森堡",
+    "name_zh": "盧森堡",
+    "name_en": "Luxembourg",
+    "formal_en": "Grand Duchy of Luxembourg",
+    "type": "Sovereign country",
+    "sovereignty": "Luxembourg"
+  },
+  {
+    "id": "阿拉伯联合酋长国",
+    "name_zh": "阿拉伯聯合大公國",
+    "name_en": "United Arab Emirates",
+    "formal_en": "United Arab Emirates",
+    "type": "Sovereign country",
+    "sovereignty": "United Arab Emirates"
+  },
+  {
+    "id": "比利时",
+    "name_zh": "比利時",
+    "name_en": "Belgium",
+    "formal_en": "Kingdom of Belgium",
+    "type": "Sovereign country",
+    "sovereignty": "Belgium"
+  },
+  {
+    "id": "格鲁吉亚",
+    "name_zh": "喬治亞",
+    "name_en": "Georgia",
+    "formal_en": "Georgia",
+    "type": "Sovereign country",
+    "sovereignty": "Georgia"
+  },
+  {
+    "id": "北马其顿",
+    "name_zh": "北馬其頓",
+    "name_en": "North Macedonia",
+    "formal_en": "Republic of North Macedonia",
+    "type": "Sovereign country",
+    "sovereignty": "North Macedonia"
+  },
+  {
+    "id": "阿尔巴尼亚",
+    "name_zh": "阿爾巴尼亞",
+    "name_en": "Albania",
+    "formal_en": "Republic of Albania",
+    "type": "Sovereign country",
+    "sovereignty": "Albania"
+  },
+  {
+    "id": "阿塞拜疆",
+    "name_zh": "亞塞拜然",
+    "name_en": "Azerbaijan",
+    "formal_en": "Republic of Azerbaijan",
+    "type": "Sovereign country",
+    "sovereignty": "Azerbaijan"
+  },
+  {
+    "id": "塞尔维亚",
+    "name_zh": "塞爾維亞",
+    "name_en": "Serbia",
+    "formal_en": "Republic of Serbia",
+    "type": "Sovereign country",
+    "sovereignty": "Republic of Serbia"
+  },
+  {
+    "id": "土耳其",
+    "name_zh": "土耳其",
+    "name_en": "Turkey",
+    "formal_en": "Republic of Turkey",
+    "type": "Sovereign country",
+    "sovereignty": "Turkey"
+  },
+  {
+    "id": "西班牙",
+    "name_zh": "西班牙",
+    "name_en": "Spain",
+    "formal_en": "Kingdom of Spain",
+    "type": "Sovereign country",
+    "sovereignty": "Spain"
+  },
+  {
+    "id": "摩洛哥",
+    "name_zh": "摩洛哥",
+    "name_en": "Morocco",
+    "formal_en": "Kingdom of Morocco",
+    "type": "Sovereign country",
+    "sovereignty": "Morocco"
+  },
+  {
+    "id": "老挝",
+    "name_zh": "寮國",
+    "name_en": "Laos",
+    "formal_en": "Lao People's Democratic Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Laos"
+  },
+  {
+    "id": "吉尔吉斯斯坦",
+    "name_zh": "吉爾吉斯",
+    "name_en": "Kyrgyzstan",
+    "formal_en": "Kyrgyz Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Kyrgyzstan"
+  },
+  {
+    "id": "亚美尼亚",
+    "name_zh": "亞美尼亞",
+    "name_en": "Armenia",
+    "formal_en": "Republic of Armenia",
+    "type": "Sovereign country",
+    "sovereignty": "Armenia"
+  },
+  {
+    "id": "丹麦",
+    "name_zh": "丹麥",
+    "name_en": "Denmark",
+    "formal_en": "Kingdom of Denmark",
+    "type": "Country",
+    "sovereignty": "Denmark"
+  },
+  {
+    "id": "利比亚",
+    "name_zh": "利比亞",
+    "name_en": "Libya",
+    "formal_en": "Libya",
+    "type": "Sovereign country",
+    "sovereignty": "Libya"
+  },
+  {
+    "id": "突尼斯",
+    "name_zh": "突尼西亞",
+    "name_en": "Tunisia",
+    "formal_en": "Republic of Tunisia",
+    "type": "Sovereign country",
+    "sovereignty": "Tunisia"
+  },
+  {
+    "id": "罗马尼亚",
+    "name_zh": "羅馬尼亞",
+    "name_en": "Romania",
+    "formal_en": "Romania",
+    "type": "Sovereign country",
+    "sovereignty": "Romania"
+  },
+  {
+    "id": "匈牙利",
+    "name_zh": "匈牙利",
+    "name_en": "Hungary",
+    "formal_en": "Republic of Hungary",
+    "type": "Sovereign country",
+    "sovereignty": "Hungary"
+  },
+  {
+    "id": "斯洛伐克",
+    "name_zh": "斯洛伐克",
+    "name_en": "Slovakia",
+    "formal_en": "Slovak Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Slovakia"
+  },
+  {
+    "id": "波兰",
+    "name_zh": "波蘭",
+    "name_en": "Poland",
+    "formal_en": "Republic of Poland",
+    "type": "Sovereign country",
+    "sovereignty": "Poland"
+  },
+  {
+    "id": "爱尔兰",
+    "name_zh": "愛爾蘭",
+    "name_en": "Ireland",
+    "formal_en": "Ireland",
+    "type": "Sovereign country",
+    "sovereignty": "Ireland"
+  },
+  {
+    "id": "英国",
+    "name_zh": "英國",
+    "name_en": "United Kingdom",
+    "formal_en": "United Kingdom of Great Britain and Northern Ireland",
+    "type": "Country",
+    "sovereignty": "United Kingdom"
+  },
+  {
+    "id": "希腊",
+    "name_zh": "希臘",
+    "name_en": "Greece",
+    "formal_en": "Hellenic Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Greece"
+  },
+  {
+    "id": "赞比亚",
+    "name_zh": "尚比亞",
+    "name_en": "Zambia",
+    "formal_en": "Republic of Zambia",
+    "type": "Sovereign country",
+    "sovereignty": "Zambia"
+  },
+  {
+    "id": "塞拉利昂",
+    "name_zh": "獅子山",
+    "name_en": "Sierra Leone",
+    "formal_en": "Republic of Sierra Leone",
+    "type": "Sovereign country",
+    "sovereignty": "Sierra Leone"
+  },
+  {
+    "id": "几内亚",
+    "name_zh": "幾內亞",
+    "name_en": "Guinea",
+    "formal_en": "Republic of Guinea",
+    "type": "Sovereign country",
+    "sovereignty": "Guinea"
+  },
+  {
+    "id": "利比里亚",
+    "name_zh": "賴比瑞亞",
+    "name_en": "Liberia",
+    "formal_en": "Republic of Liberia",
+    "type": "Sovereign country",
+    "sovereignty": "Liberia"
+  },
+  {
+    "id": "中非共和国",
+    "name_zh": "中非共和國",
+    "name_en": "Central African Republic",
+    "formal_en": "Central African Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Central African Republic"
+  },
+  {
+    "id": "苏丹",
+    "name_zh": "蘇丹",
+    "name_en": "Sudan",
+    "formal_en": "Republic of the Sudan",
+    "type": "Sovereign country",
+    "sovereignty": "Sudan"
+  },
+  {
+    "id": "吉布提",
+    "name_zh": "吉布地",
+    "name_en": "Djibouti",
+    "formal_en": "Republic of Djibouti",
+    "type": "Sovereign country",
+    "sovereignty": "Djibouti"
+  },
+  {
+    "id": "厄立特里亚",
+    "name_zh": "厄利垂亞",
+    "name_en": "Eritrea",
+    "formal_en": "State of Eritrea",
+    "type": "Sovereign country",
+    "sovereignty": "Eritrea"
+  },
+  {
+    "id": "奥地利",
+    "name_zh": "奧地利",
+    "name_en": "Austria",
+    "formal_en": "Republic of Austria",
+    "type": "Sovereign country",
+    "sovereignty": "Austria"
+  },
+  {
+    "id": "伊拉克",
+    "name_zh": "伊拉克",
+    "name_en": "Iraq",
+    "formal_en": "Republic of Iraq",
+    "type": "Sovereign country",
+    "sovereignty": "Iraq"
+  },
+  {
+    "id": "意大利",
+    "name_zh": "義大利",
+    "name_en": "Italy",
+    "formal_en": "Italian Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Italy"
+  },
+  {
+    "id": "瑞士",
+    "name_zh": "瑞士",
+    "name_en": "Switzerland",
+    "formal_en": "Swiss Confederation",
+    "type": "Sovereign country",
+    "sovereignty": "Switzerland"
+  },
+  {
+    "id": "伊朗",
+    "name_zh": "伊朗",
+    "name_en": "Iran",
+    "formal_en": "Islamic Republic of Iran",
+    "type": "Sovereign country",
+    "sovereignty": "Iran"
+  },
+  {
+    "id": "荷兰",
+    "name_zh": "荷蘭",
+    "name_en": "Netherlands",
+    "formal_en": "Kingdom of the Netherlands",
+    "type": "Country",
+    "sovereignty": "Netherlands"
+  },
+  {
+    "id": "列支敦士登",
+    "name_zh": "列支敦斯登",
+    "name_en": "Liechtenstein",
+    "formal_en": "Principality of Liechtenstein",
+    "type": "Sovereign country",
+    "sovereignty": "Liechtenstein"
+  },
+  {
+    "id": "科特迪瓦",
+    "name_zh": "象牙海岸",
+    "name_en": "Ivory Coast",
+    "formal_en": "Republic of Ivory Coast",
+    "type": "Sovereign country",
+    "sovereignty": "Ivory Coast"
+  },
+  {
+    "id": "马里",
+    "name_zh": "馬利共和國",
+    "name_en": "Mali",
+    "formal_en": "Republic of Mali",
+    "type": "Sovereign country",
+    "sovereignty": "Mali"
+  },
+  {
+    "id": "塞内加尔",
+    "name_zh": "塞內加爾",
+    "name_en": "Senegal",
+    "formal_en": "Republic of Senegal",
+    "type": "Sovereign country",
+    "sovereignty": "Senegal"
+  },
+  {
+    "id": "尼日利亚",
+    "name_zh": "奈及利亞",
+    "name_en": "Nigeria",
+    "formal_en": "Federal Republic of Nigeria",
+    "type": "Sovereign country",
+    "sovereignty": "Nigeria"
+  },
+  {
+    "id": "贝宁",
+    "name_zh": "貝南",
+    "name_en": "Benin",
+    "formal_en": "Republic of Benin",
+    "type": "Sovereign country",
+    "sovereignty": "Benin"
+  },
+  {
+    "id": "安哥拉",
+    "name_zh": "安哥拉",
+    "name_en": "Angola",
+    "formal_en": "People's Republic of Angola",
+    "type": "Sovereign country",
+    "sovereignty": "Angola"
+  },
+  {
+    "id": "克罗地亚",
+    "name_zh": "克羅地亞",
+    "name_en": "Croatia",
+    "formal_en": "Republic of Croatia",
+    "type": "Sovereign country",
+    "sovereignty": "Croatia"
+  },
+  {
+    "id": "斯洛文尼亚",
+    "name_zh": "斯洛維尼亞",
+    "name_en": "Slovenia",
+    "formal_en": "Republic of Slovenia",
+    "type": "Sovereign country",
+    "sovereignty": "Slovenia"
+  },
+  {
+    "id": "卡塔尔",
+    "name_zh": "卡達",
+    "name_en": "Qatar",
+    "formal_en": "State of Qatar",
+    "type": "Sovereign country",
+    "sovereignty": "Qatar"
+  },
+  {
+    "id": "沙特阿拉伯",
+    "name_zh": "沙烏地阿拉伯",
+    "name_en": "Saudi Arabia",
+    "formal_en": "Kingdom of Saudi Arabia",
+    "type": "Sovereign country",
+    "sovereignty": "Saudi Arabia"
+  },
+  {
+    "id": "博茨瓦纳",
+    "name_zh": "波札那",
+    "name_en": "Botswana",
+    "formal_en": "Republic of Botswana",
+    "type": "Sovereign country",
+    "sovereignty": "Botswana"
+  },
+  {
+    "id": "津巴布韦",
+    "name_zh": "辛巴威",
+    "name_en": "Zimbabwe",
+    "formal_en": "Republic of Zimbabwe",
+    "type": "Sovereign country",
+    "sovereignty": "Zimbabwe"
+  },
+  {
+    "id": "巴基斯坦",
+    "name_zh": "巴基斯坦",
+    "name_en": "Pakistan",
+    "formal_en": "Islamic Republic of Pakistan",
+    "type": "Sovereign country",
+    "sovereignty": "Pakistan"
+  },
+  {
+    "id": "保加利亚",
+    "name_zh": "保加利亞",
+    "name_en": "Bulgaria",
+    "formal_en": "Republic of Bulgaria",
+    "type": "Sovereign country",
+    "sovereignty": "Bulgaria"
+  },
+  {
+    "id": "泰国",
+    "name_zh": "泰國",
+    "name_en": "Thailand",
+    "formal_en": "Kingdom of Thailand",
+    "type": "Sovereign country",
+    "sovereignty": "Thailand"
+  },
+  {
+    "id": "圣马力诺",
+    "name_zh": "聖馬力諾",
+    "name_en": "San Marino",
+    "formal_en": "Republic of San Marino",
+    "type": "Sovereign country",
+    "sovereignty": "San Marino"
+  },
+  {
+    "id": "海地",
+    "name_zh": "海地",
+    "name_en": "Haiti",
+    "formal_en": "Republic of Haiti",
+    "type": "Sovereign country",
+    "sovereignty": "Haiti"
+  },
+  {
+    "id": "多米尼加",
+    "name_zh": "多明尼加",
+    "name_en": "Dominican Republic",
+    "formal_en": "Dominican Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Dominican Republic"
+  },
+  {
+    "id": "乍得",
+    "name_zh": "查德",
+    "name_en": "Chad",
+    "formal_en": "Republic of Chad",
+    "type": "Sovereign country",
+    "sovereignty": "Chad"
+  },
+  {
+    "id": "科威特",
+    "name_zh": "科威特",
+    "name_en": "Kuwait",
+    "formal_en": "State of Kuwait",
+    "type": "Sovereign country",
+    "sovereignty": "Kuwait"
+  },
+  {
+    "id": "萨尔瓦多",
+    "name_zh": "薩爾瓦多",
+    "name_en": "El Salvador",
+    "formal_en": "Republic of El Salvador",
+    "type": "Sovereign country",
+    "sovereignty": "El Salvador"
+  },
+  {
+    "id": "危地马拉",
+    "name_zh": "瓜地馬拉",
+    "name_en": "Guatemala",
+    "formal_en": "Republic of Guatemala",
+    "type": "Sovereign country",
+    "sovereignty": "Guatemala"
+  },
+  {
+    "id": "东帝汶",
+    "name_zh": "東帝汶",
+    "name_en": "East Timor",
+    "formal_en": "Democratic Republic of Timor-Leste",
+    "type": "Sovereign country",
+    "sovereignty": "East Timor"
+  },
+  {
+    "id": "文莱",
+    "name_zh": "汶萊",
+    "name_en": "Brunei",
+    "formal_en": "Negara Brunei Darussalam",
+    "type": "Sovereign country",
+    "sovereignty": "Brunei"
+  },
+  {
+    "id": "摩纳哥",
+    "name_zh": "摩納哥",
+    "name_en": "Monaco",
+    "formal_en": "Principality of Monaco",
+    "type": "Sovereign country",
+    "sovereignty": "Monaco"
+  },
+  {
+    "id": "阿尔及利亚",
+    "name_zh": "阿爾及利亞",
+    "name_en": "Algeria",
+    "formal_en": "People's Democratic Republic of Algeria",
+    "type": "Sovereign country",
+    "sovereignty": "Algeria"
+  },
+  {
+    "id": "莫桑比克",
+    "name_zh": "莫三比克",
+    "name_en": "Mozambique",
+    "formal_en": "Republic of Mozambique",
+    "type": "Sovereign country",
+    "sovereignty": "Mozambique"
+  },
+  {
+    "id": "斯威士兰",
+    "name_zh": "史瓦帝尼",
+    "name_en": "Eswatini",
+    "formal_en": "Kingdom of eSwatini",
+    "type": "Sovereign country",
+    "sovereignty": "eSwatini"
+  },
+  {
+    "id": "布隆迪",
+    "name_zh": "蒲隆地",
+    "name_en": "Burundi",
+    "formal_en": "Republic of Burundi",
+    "type": "Sovereign country",
+    "sovereignty": "Burundi"
+  },
+  {
+    "id": "卢旺达",
+    "name_zh": "盧旺達",
+    "name_en": "Rwanda",
+    "formal_en": "Republic of Rwanda",
+    "type": "Sovereign country",
+    "sovereignty": "Rwanda"
+  },
+  {
+    "id": "缅甸",
+    "name_zh": "緬甸",
+    "name_en": "Myanmar",
+    "formal_en": "Republic of the Union of Myanmar",
+    "type": "Sovereign country",
+    "sovereignty": "Myanmar"
+  },
+  {
+    "id": "孟加拉国",
+    "name_zh": "孟加拉",
+    "name_en": "Bangladesh",
+    "formal_en": "People's Republic of Bangladesh",
+    "type": "Sovereign country",
+    "sovereignty": "Bangladesh"
+  },
+  {
+    "id": "安道尔",
+    "name_zh": "安道爾",
+    "name_en": "Andorra",
+    "formal_en": "Principality of Andorra",
+    "type": "Sovereign country",
+    "sovereignty": "Andorra"
+  },
+  {
+    "id": "阿富汗",
+    "name_zh": "阿富汗",
+    "name_en": "Afghanistan",
+    "formal_en": "Islamic State of Afghanistan",
+    "type": "Sovereign country",
+    "sovereignty": "Afghanistan"
+  },
+  {
+    "id": "黑山",
+    "name_zh": "蒙特內哥羅",
+    "name_en": "Montenegro",
+    "formal_en": "Montenegro",
+    "type": "Sovereign country",
+    "sovereignty": "Montenegro"
+  },
+  {
+    "id": "波斯尼亚和黑塞哥维那",
+    "name_zh": "波士尼亞與赫塞哥維納",
+    "name_en": "Bosnia and Herzegovina",
+    "formal_en": "Bosnia and Herzegovina",
+    "type": "Sovereign country",
+    "sovereignty": "Bosnia and Herzegovina"
+  },
+  {
+    "id": "乌干达",
+    "name_zh": "烏干達",
+    "name_en": "Uganda",
+    "formal_en": "Republic of Uganda",
+    "type": "Sovereign country",
+    "sovereignty": "Uganda"
+  },
+  {
+    "id": "古巴",
+    "name_zh": "古巴",
+    "name_en": "Cuba",
+    "formal_en": "Republic of Cuba",
+    "type": "Sovereignty",
+    "sovereignty": "Cuba"
+  },
+  {
+    "id": "洪都拉斯",
+    "name_zh": "宏都拉斯",
+    "name_en": "Honduras",
+    "formal_en": "Republic of Honduras",
+    "type": "Sovereign country",
+    "sovereignty": "Honduras"
+  },
+  {
+    "id": "厄瓜多尔",
+    "name_zh": "厄瓜多爾",
+    "name_en": "Ecuador",
+    "formal_en": "Republic of Ecuador",
+    "type": "Sovereign country",
+    "sovereignty": "Ecuador"
+  },
+  {
+    "id": "哥伦比亚",
+    "name_zh": "哥倫比亞",
+    "name_en": "Colombia",
+    "formal_en": "Republic of Colombia",
+    "type": "Sovereign country",
+    "sovereignty": "Colombia"
+  },
+  {
+    "id": "巴拉圭",
+    "name_zh": "巴拉圭",
+    "name_en": "Paraguay",
+    "formal_en": "Republic of Paraguay",
+    "type": "Sovereign country",
+    "sovereignty": "Paraguay"
+  },
+  {
+    "id": "巴西岛",
+    "name_zh": "巴西島",
+    "name_en": "Brazilian Island",
+    "formal_en": "",
+    "type": "Indeterminate",
+    "sovereignty": "Brazilian Island"
+  },
+  {
+    "id": "葡萄牙",
+    "name_zh": "葡萄牙",
+    "name_en": "Portugal",
+    "formal_en": "Portuguese Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Portugal"
+  },
+  {
+    "id": "摩尔多瓦",
+    "name_zh": "摩爾多瓦",
+    "name_en": "Moldova",
+    "formal_en": "Republic of Moldova",
+    "type": "Sovereign country",
+    "sovereignty": "Moldova"
+  },
+  {
+    "id": "土库曼斯坦",
+    "name_zh": "土庫曼",
+    "name_en": "Turkmenistan",
+    "formal_en": "Turkmenistan",
+    "type": "Sovereign country",
+    "sovereignty": "Turkmenistan"
+  },
+  {
+    "id": "约旦",
+    "name_zh": "約旦",
+    "name_en": "Jordan",
+    "formal_en": "Hashemite Kingdom of Jordan",
+    "type": "Sovereign country",
+    "sovereignty": "Jordan"
+  },
+  {
+    "id": "尼泊尔",
+    "name_zh": "尼泊爾",
+    "name_en": "Nepal",
+    "formal_en": "Nepal",
+    "type": "Sovereign country",
+    "sovereignty": "Nepal"
+  },
+  {
+    "id": "莱索托",
+    "name_zh": "賴索托",
+    "name_en": "Lesotho",
+    "formal_en": "Kingdom of Lesotho",
+    "type": "Sovereign country",
+    "sovereignty": "Lesotho"
+  },
+  {
+    "id": "喀麦隆",
+    "name_zh": "喀麥隆",
+    "name_en": "Cameroon",
+    "formal_en": "Republic of Cameroon",
+    "type": "Sovereign country",
+    "sovereignty": "Cameroon"
+  },
+  {
+    "id": "加蓬",
+    "name_zh": "加彭",
+    "name_en": "Gabon",
+    "formal_en": "Gabonese Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Gabon"
+  },
+  {
+    "id": "尼日尔",
+    "name_zh": "尼日",
+    "name_en": "Niger",
+    "formal_en": "Republic of Niger",
+    "type": "Sovereign country",
+    "sovereignty": "Niger"
+  },
+  {
+    "id": "布基纳法索",
+    "name_zh": "布基納法索",
+    "name_en": "Burkina Faso",
+    "formal_en": "Burkina Faso",
+    "type": "Sovereign country",
+    "sovereignty": "Burkina Faso"
+  },
+  {
+    "id": "多哥",
+    "name_zh": "多哥",
+    "name_en": "Togo",
+    "formal_en": "Togolese Republic",
+    "type": "Sovereign country",
+    "sovereignty": "Togo"
+  },
+  {
+    "id": "加纳",
+    "name_zh": "迦納",
+    "name_en": "Ghana",
+    "formal_en": "Republic of Ghana",
+    "type": "Sovereign country",
+    "sovereignty": "Ghana"
+  },
+  {
+    "id": "几内亚比绍",
+    "name_zh": "幾內亞比索",
+    "name_en": "Guinea-Bissau",
+    "formal_en": "Republic of Guinea-Bissau",
+    "type": "Sovereign country",
+    "sovereignty": "Guinea-Bissau"
+  },
+  {
+    "id": "美国",
+    "name_zh": "美國",
+    "name_en": "United States of America",
+    "formal_en": "United States of America",
+    "type": "Country",
+    "sovereignty": "United States of America"
+  },
+  {
+    "id": "加拿大",
+    "name_zh": "加拿大",
+    "name_en": "Canada",
+    "formal_en": "Canada",
+    "type": "Sovereign country",
+    "sovereignty": "Canada"
+  },
+  {
+    "id": "墨西哥",
+    "name_zh": "墨西哥",
+    "name_en": "Mexico",
+    "formal_en": "United Mexican States",
+    "type": "Sovereign country",
+    "sovereignty": "Mexico"
+  },
+  {
+    "id": "伯利兹",
+    "name_zh": "貝里斯",
+    "name_en": "Belize",
+    "formal_en": "Belize",
+    "type": "Sovereign country",
+    "sovereignty": "Belize"
+  },
+  {
+    "id": "巴拿马",
+    "name_zh": "巴拿馬",
+    "name_en": "Panama",
+    "formal_en": "Republic of Panama",
+    "type": "Sovereign country",
+    "sovereignty": "Panama"
+  },
+  {
+    "id": "委内瑞拉",
+    "name_zh": "委內瑞拉",
+    "name_en": "Venezuela",
+    "formal_en": "Bolivarian Republic of Venezuela",
+    "type": "Sovereign country",
+    "sovereignty": "Venezuela"
+  },
+  {
+    "id": "巴布亚新几内亚",
+    "name_zh": "巴布亞紐幾內亞",
+    "name_en": "Papua New Guinea",
+    "formal_en": "Independent State of Papua New Guinea",
+    "type": "Sovereign country",
+    "sovereignty": "Papua New Guinea"
+  },
+  {
+    "id": "埃及",
+    "name_zh": "埃及",
+    "name_en": "Egypt",
+    "formal_en": "Arab Republic of Egypt",
+    "type": "Sovereign country",
+    "sovereignty": "Egypt"
+  },
+  {
+    "id": "也门",
+    "name_zh": "葉門",
+    "name_en": "Yemen",
+    "formal_en": "Republic of Yemen",
+    "type": "Sovereign country",
+    "sovereignty": "Yemen"
+  },
+  {
+    "id": "毛里塔尼亚",
+    "name_zh": "茅利塔尼亞",
+    "name_en": "Mauritania",
+    "formal_en": "Islamic Republic of Mauritania",
+    "type": "Sovereign country",
+    "sovereignty": "Mauritania"
+  },
+  {
+    "id": "肯尼亚",
+    "name_zh": "肯亞",
+    "name_en": "Kenya",
+    "formal_en": "Republic of Kenya",
+    "type": "Sovereign country",
+    "sovereignty": "Kenya"
+  },
+  {
+    "id": "赤道几内亚",
+    "name_zh": "赤道幾內亞",
+    "name_en": "Equatorial Guinea",
+    "formal_en": "Republic of Equatorial Guinea",
+    "type": "Sovereign country",
+    "sovereignty": "Equatorial Guinea"
+  },
+  {
+    "id": "冈比亚",
+    "name_zh": "甘比亞",
+    "name_en": "The Gambia",
+    "formal_en": "Republic of the Gambia",
+    "type": "Sovereign country",
+    "sovereignty": "Gambia"
+  },
+  {
+    "id": "梵蒂冈",
+    "name_zh": "梵蒂岡",
+    "name_en": "Vatican City",
+    "formal_en": "State of the Vatican City",
+    "type": "Sovereign country",
+    "sovereignty": "Vatican"
+  },
+  {
+    "id": "比尔泰维勒",
+    "name_zh": "比爾塔威爾",
+    "name_en": "Bir Tawil",
+    "formal_en": "",
+    "type": "Indeterminate",
+    "sovereignty": "Bir Tawil"
+  },
+  {
+    "id": "南极洲",
+    "name_zh": "南極洲",
+    "name_en": "Antarctica",
+    "formal_en": "",
+    "type": "Indeterminate",
+    "sovereignty": "Antarctica"
+  },
+  {
+    "id": "澳大利亚",
+    "name_zh": "澳大利亞",
+    "name_en": "Australia",
+    "formal_en": "Commonwealth of Australia",
+    "type": "Country",
+    "sovereignty": "Australia"
+  },
+  {
+    "id": "denmark-out",
+    "name_zh": "denmark-out",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "斐济",
+    "name_zh": "斐濟",
+    "name_en": "Fiji",
+    "formal_en": "Republic of Fiji",
+    "type": "Sovereign country",
+    "sovereignty": "Fiji"
+  },
+  {
+    "id": "新西兰",
+    "name_zh": "新西蘭",
+    "name_en": "New Zealand",
+    "formal_en": "New Zealand",
+    "type": "Country",
+    "sovereignty": "New Zealand"
+  },
+  {
+    "id": "马达加斯加",
+    "name_zh": "馬達加斯加",
+    "name_en": "Madagascar",
+    "formal_en": "Republic of Madagascar",
+    "type": "Sovereign country",
+    "sovereignty": "Madagascar"
+  },
+  {
+    "id": "菲律宾",
+    "name_zh": "菲律賓",
+    "name_en": "Philippines",
+    "formal_en": "Republic of the Philippines",
+    "type": "Sovereign country",
+    "sovereignty": "Philippines"
+  },
+  {
+    "id": "斯里兰卡",
+    "name_zh": "斯里蘭卡",
+    "name_en": "Sri Lanka",
+    "formal_en": "Democratic Socialist Republic of Sri Lanka",
+    "type": "Sovereign country",
+    "sovereignty": "Sri Lanka"
+  },
+  {
+    "id": "巴哈马",
+    "name_zh": "巴哈馬",
+    "name_en": "The Bahamas",
+    "formal_en": "Commonwealth of the Bahamas",
+    "type": "Sovereign country",
+    "sovereignty": "The Bahamas"
+  },
+  {
+    "id": "日本",
+    "name_zh": "日本",
+    "name_en": "Japan",
+    "formal_en": "Japan",
+    "type": "Sovereign country",
+    "sovereignty": "Japan"
+  },
+  {
+    "id": "冰岛",
+    "name_zh": "冰島",
+    "name_en": "Iceland",
+    "formal_en": "Republic of Iceland",
+    "type": "Sovereign country",
+    "sovereignty": "Iceland"
+  },
+  {
+    "id": "塞舌尔",
+    "name_zh": "塞席爾",
+    "name_en": "Seychelles",
+    "formal_en": "Republic of Seychelles",
+    "type": "Sovereign country",
+    "sovereignty": "Seychelles"
+  },
+  {
+    "id": "基里巴斯",
+    "name_zh": "吉里巴斯",
+    "name_en": "Kiribati",
+    "formal_en": "Republic of Kiribati",
+    "type": "Sovereign country",
+    "sovereignty": "Kiribati"
+  },
+  {
+    "id": "马绍尔群岛",
+    "name_zh": "馬紹爾群島",
+    "name_en": "Marshall Islands",
+    "formal_en": "Republic of the Marshall Islands",
+    "type": "Sovereign country",
+    "sovereignty": "Marshall Islands"
+  },
+  {
+    "id": "特立尼达和多巴哥",
+    "name_zh": "千里達及托巴哥",
+    "name_en": "Trinidad and Tobago",
+    "formal_en": "Republic of Trinidad and Tobago",
+    "type": "Sovereign country",
+    "sovereignty": "Trinidad and Tobago"
+  },
+  {
+    "id": "格林纳达",
+    "name_zh": "格瑞那達",
+    "name_en": "Grenada",
+    "formal_en": "Grenada",
+    "type": "Sovereign country",
+    "sovereignty": "Grenada"
+  },
+  {
+    "id": "圣文森特和格林纳丁斯",
+    "name_zh": "聖文森及格瑞那丁",
+    "name_en": "Saint Vincent and the Grenadines",
+    "formal_en": "Saint Vincent and the Grenadines",
+    "type": "Sovereign country",
+    "sovereignty": "Saint Vincent and the Grenadines"
+  },
+  {
+    "id": "巴巴多斯",
+    "name_zh": "巴貝多",
+    "name_en": "Barbados",
+    "formal_en": "Barbados",
+    "type": "Sovereign country",
+    "sovereignty": "Barbados"
+  },
+  {
+    "id": "圣卢西亚",
+    "name_zh": "聖露西亞",
+    "name_en": "Saint Lucia",
+    "formal_en": "Saint Lucia",
+    "type": "Sovereign country",
+    "sovereignty": "Saint Lucia"
+  },
+  {
+    "id": "多米尼克",
+    "name_zh": "多米尼克",
+    "name_en": "Dominica",
+    "formal_en": "Commonwealth of Dominica",
+    "type": "Sovereign country",
+    "sovereignty": "Dominica"
+  },
+  {
+    "id": "us-out",
+    "name_zh": "us-out",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "安提瓜和巴布达",
+    "name_zh": "安地卡及巴布達",
+    "name_en": "Antigua and Barbuda",
+    "formal_en": "Antigua and Barbuda",
+    "type": "Sovereign country",
+    "sovereignty": "Antigua and Barbuda"
+  },
+  {
+    "id": "圣基茨和尼维斯",
+    "name_zh": "聖克里斯多福與尼維斯",
+    "name_en": "Saint Kitts and Nevis",
+    "formal_en": "Federation of Saint Kitts and Nevis",
+    "type": "Sovereign country",
+    "sovereignty": "Saint Kitts and Nevis"
+  },
+  {
+    "id": "牙买加",
+    "name_zh": "牙買加",
+    "name_en": "Jamaica",
+    "formal_en": "Jamaica",
+    "type": "Sovereign country",
+    "sovereignty": "Jamaica"
+  },
+  {
+    "id": "australia-out",
+    "name_zh": "australia-out",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "毛里求斯",
+    "name_zh": "模里西斯",
+    "name_en": "Mauritius",
+    "formal_en": "Republic of Mauritius",
+    "type": "Sovereign country",
+    "sovereignty": "Mauritius"
+  },
+  {
+    "id": "科摩罗",
+    "name_zh": "葛摩",
+    "name_en": "Comoros",
+    "formal_en": "Union of the Comoros",
+    "type": "Sovereign country",
+    "sovereignty": "Comoros"
+  },
+  {
+    "id": "圣多美和普林西比",
+    "name_zh": "聖多美普林西比",
+    "name_en": "São Tomé and Príncipe",
+    "formal_en": "Democratic Republic of São Tomé and Principe",
+    "type": "Sovereign country",
+    "sovereignty": "São Tomé and Principe"
+  },
+  {
+    "id": "佛得角",
+    "name_zh": "維德角",
+    "name_en": "Cape Verde",
+    "formal_en": "Republic of Cabo Verde",
+    "type": "Sovereign country",
+    "sovereignty": "Cabo Verde"
+  },
+  {
+    "id": "马耳他",
+    "name_zh": "馬耳他",
+    "name_en": "Malta",
+    "formal_en": "Republic of Malta",
+    "type": "Sovereign country",
+    "sovereignty": "Malta"
+  },
+  {
+    "id": "奥兰",
+    "name_zh": "奧蘭",
+    "name_en": "Åland",
+    "formal_en": "Åland Islands",
+    "type": "Country",
+    "sovereignty": "Finland"
+  },
+  {
+    "id": "新加坡",
+    "name_zh": "新加坡",
+    "name_en": "Singapore",
+    "formal_en": "Republic of Singapore",
+    "type": "Sovereign country",
+    "sovereignty": "Singapore"
+  },
+  {
+    "id": "库克群岛",
+    "name_zh": "庫克群島",
+    "name_en": "Cook Islands",
+    "formal_en": "",
+    "type": "Dependency",
+    "sovereignty": "New Zealand"
+  },
+  {
+    "id": "汤加",
+    "name_zh": "東加",
+    "name_en": "Tonga",
+    "formal_en": "Kingdom of Tonga",
+    "type": "Sovereign country",
+    "sovereignty": "Tonga"
+  },
+  {
+    "id": "萨摩亚",
+    "name_zh": "薩摩亞",
+    "name_en": "Samoa",
+    "formal_en": "Independent State of Samoa",
+    "type": "Sovereign country",
+    "sovereignty": "Samoa"
+  },
+  {
+    "id": "所罗门群岛",
+    "name_zh": "索羅門群島",
+    "name_en": "Solomon Islands",
+    "formal_en": "",
+    "type": "Sovereign country",
+    "sovereignty": "Solomon Islands"
+  },
+  {
+    "id": "图瓦卢",
+    "name_zh": "吐瓦魯",
+    "name_en": "Tuvalu",
+    "formal_en": "Tuvalu",
+    "type": "Sovereign country",
+    "sovereignty": "Tuvalu"
+  },
+  {
+    "id": "马尔代夫",
+    "name_zh": "馬爾地夫",
+    "name_en": "Maldives",
+    "formal_en": "Republic of Maldives",
+    "type": "Sovereign country",
+    "sovereignty": "Maldives"
+  },
+  {
+    "id": "瑙鲁",
+    "name_zh": "諾魯",
+    "name_en": "Nauru",
+    "formal_en": "Republic of Nauru",
+    "type": "Sovereign country",
+    "sovereignty": "Nauru"
+  },
+  {
+    "id": "密克罗尼西亚联邦",
+    "name_zh": "密克羅尼西亞聯邦",
+    "name_en": "Federated States of Micronesia",
+    "formal_en": "Federated States of Micronesia",
+    "type": "Sovereign country",
+    "sovereignty": "Federated States of Micronesia"
+  },
+  {
+    "id": "福克兰群岛",
+    "name_zh": "福克蘭群島",
+    "name_en": "Falkland Islands",
+    "formal_en": "Falkland Islands",
+    "type": "Disputed",
+    "sovereignty": "United Kingdom"
+  },
+  {
+    "id": "瓦努阿图",
+    "name_zh": "萬那杜",
+    "name_en": "Vanuatu",
+    "formal_en": "Republic of Vanuatu",
+    "type": "Sovereign country",
+    "sovereignty": "Vanuatu"
+  },
+  {
+    "id": "纽埃",
+    "name_zh": "紐埃",
+    "name_en": "Niue",
+    "formal_en": "",
+    "type": "Dependency",
+    "sovereignty": "New Zealand"
+  },
+  {
+    "id": "帕劳",
+    "name_zh": "帛琉",
+    "name_en": "Palau",
+    "formal_en": "Republic of Palau",
+    "type": "Sovereign country",
+    "sovereignty": "Palau"
+  },
+  {
+    "id": "巴林",
+    "name_zh": "巴林",
+    "name_en": "Bahrain",
+    "formal_en": "Kingdom of Bahrain",
+    "type": "Sovereign country",
+    "sovereignty": "Bahrain"
+  },
+  {
+    "id": "十段线",
+    "name_zh": "十段线",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "中国岛屿",
+    "name_zh": "中国岛屿",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "china9",
+    "name_zh": "china9",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "verde-cover",
+    "name_zh": "verde-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "saotome-cover",
+    "name_zh": "saotome-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "comoros-cover",
+    "name_zh": "comoros-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "mauritius-cover",
+    "name_zh": "mauritius-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "seychelles-cover",
+    "name_zh": "seychelles-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "Vanuatu-cover",
+    "name_zh": "Vanuatu-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "Solomon-cover",
+    "name_zh": "Solomon-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "Fiji-cover",
+    "name_zh": "Fiji-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "Tuvalu-cover",
+    "name_zh": "Tuvalu-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "Nauru-cover",
+    "name_zh": "Nauru-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "Kiribati-cover",
+    "name_zh": "Kiribati-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "Marshall-cover",
+    "name_zh": "Marshall-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "Micronesia-cover",
+    "name_zh": "Micronesia-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "Palau-cover",
+    "name_zh": "Palau-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "Samoa-cover",
+    "name_zh": "Samoa-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "Tonga-cover",
+    "name_zh": "Tonga-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "Niue-cover",
+    "name_zh": "Niue-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "Cook-cover",
+    "name_zh": "Cook-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "singapore-cover",
+    "name_zh": "singapore-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "bahrain-cover",
+    "name_zh": "bahrain-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "andorra-cover",
+    "name_zh": "andorra-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "monaco-cover",
+    "name_zh": "monaco-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "liechtenstein-cover",
+    "name_zh": "liechtenstein-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "sanmarino-cover",
+    "name_zh": "sanmarino-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "vatican-cover",
+    "name_zh": "vatican-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "malta-cover",
+    "name_zh": "malta-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "barbados-cover",
+    "name_zh": "barbados-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "vincent-cover",
+    "name_zh": "vincent-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "grenada-cover",
+    "name_zh": "grenada-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "trinidad-cover",
+    "name_zh": "trinidad-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "lucia-cover",
+    "name_zh": "lucia-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "dominica-cover",
+    "name_zh": "dominica-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "antigua-cover",
+    "name_zh": "antigua-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "kitts-cover",
+    "name_zh": "kitts-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  },
+  {
+    "id": "maldives-cover",
+    "name_zh": "maldives-cover",
+    "name_en": "",
+    "formal_en": "",
+    "type": "",
+    "sovereignty": ""
+  }
+]

@@ -1,205 +1,239 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>全能知识挑战汇总系统</title>
     <style>
-        :root {
-            --bg-color: #f0f2f5;
-            --card-bg: #ffffff;
-            --primary-text: #2c3e50;
-            --secondary-text: #606266;
-            --shadow: 0 8px 24px rgba(149, 157, 165, 0.1);
-        }
+      :root {
+        --bg-color: #f0f2f5;
+        --card-bg: #ffffff;
+        --primary-text: #2c3e50;
+        --secondary-text: #606266;
+        --shadow: 0 8px 24px rgba(149, 157, 165, 0.1);
+      }
 
-        body { 
-            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            background-color: var(--bg-color);
-            color: var(--primary-text);
-            line-height: 1.6;
-        }
-        
+      body {
+        font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        margin: 0;
+        padding: 40px 20px;
+        background-color: var(--bg-color);
+        color: var(--primary-text);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px;
+        background: var(--card-bg);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 40px;
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .github-link {
+        font-size: 0.9rem;
+        color: var(--secondary-text);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.3s;
+      }
+      .github-link:hover {
+        color: #007bff;
+      }
+
+      .category {
+        margin-bottom: 40px;
+      }
+
+      .category h2 {
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        padding-left: 15px;
+        border-left: 5px solid #409eff;
+      }
+
+      .btn-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .btn {
+        position: relative;
+        padding: 20px;
+        font-size: 1.1rem;
+        border-radius: 16px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn::after {
+        content: "→";
+        position: absolute;
+        right: 20px;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s;
+      }
+
+      .btn:hover::after {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* 分类颜色定制 */
+      .cat-history {
+        border-left-color: #cc0000;
+      }
+      .btn-history {
+        background: linear-gradient(135deg, #8e0e00, #1f1c18);
+      }
+      .btn-athlete {
+        background: linear-gradient(135deg, #e60012, #ff4d4d);
+      }
+
+      .cat-animal {
+        border-left-color: #ff9900;
+      }
+      .btn-cat {
+        background: linear-gradient(135deg, #f2994a, #f2c94c);
+      }
+
+      .cat-univ {
+        border-left-color: #764ba2;
+      }
+      .btn-univ {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+      }
+
+      .cat-geo {
+        border-left-color: #2193b0;
+      }
+      .btn-geo {
+        background: linear-gradient(135deg, #2193b0, #6dd5ed);
+      }
+
+      .instructions {
+        background: #f8f9fa;
+        padding: 25px;
+        border-radius: 18px;
+        margin-top: 50px;
+        border-left: 6px solid #67c23a;
+      }
+
+      .instructions h3 {
+        color: #67c23a;
+        margin: 0 0 15px 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      @media (max-width: 600px) {
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px;
-            background: var(--card-bg);
-            border-radius: 24px;
-            box-shadow: var(--shadow);
+          padding: 20px;
         }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 2px solid #f0f2f5;
-            padding-bottom: 20px;
-        }
-
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+          font-size: 1.8rem;
         }
-
-        .github-link {
-            font-size: 0.9rem;
-            color: var(--secondary-text);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: color 0.3s;
-        }
-        .github-link:hover { color: #007bff; }
-        
-        .category {
-            margin-bottom: 40px;
-        }
-        
-        .category h2 {
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 5px solid #409EFF;
-        }
-        
         .btn-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+          grid-template-columns: 1fr;
         }
-        
-        .btn {
-            position: relative;
-            padding: 20px;
-            font-size: 1.1rem;
-            border-radius: 16px;
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-        }
-
-        .btn::after {
-            content: '→';
-            position: absolute;
-            right: 20px;
-            opacity: 0;
-            transform: translateX(-10px);
-            transition: all 0.3s;
-        }
-
-        .btn:hover::after {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        /* 分类颜色定制 */
-        .cat-history { border-left-color: #cc0000; }
-        .btn-history { background: linear-gradient(135deg, #8e0e00, #1f1c18); }
-        .btn-athlete { background: linear-gradient(135deg, #e60012, #ff4d4d); }
-        
-        .cat-animal { border-left-color: #ff9900; }
-        .btn-cat { background: linear-gradient(135deg, #f2994a, #f2c94c); }
-        
-        .cat-univ { border-left-color: #764ba2; }
-        .btn-univ { background: linear-gradient(135deg, #667eea, #764ba2); }
-        
-        .cat-geo { border-left-color: #2193b0; }
-        .btn-geo { background: linear-gradient(135deg, #2193b0, #6dd5ed); }
-        
-        .instructions {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 18px;
-            margin-top: 50px;
-            border-left: 6px solid #67C23A;
-        }
-        
-        .instructions h3 {
-            color: #67C23A;
-            margin: 0 0 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        @media (max-width: 600px) {
-            .container { padding: 20px; }
-            h1 { font-size: 1.8rem; }
-            .btn-grid { grid-template-columns: 1fr; }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>📚 答题汇总系统</h1>
-            <a href="https://github.com/cat-of-landlord/quiz-game" class="github-link">
-                🔗 页面源代码：github.com/cat-of-landlord/quiz-game
-            </a>
-        </header>
-        
-        <div class="category cat-history">
-            <h2>👤 历史人物与体育精英</h2>
-            <div class="btn-grid">
-                <a class="btn btn-history" href="共产主义战士.html">国际共产主义战士特辑</a>
-                <a class="btn btn-athlete" href="全国十佳运动员.html">中国十佳运动员特辑</a>
-            </div>
-        </div>
+      <header>
+        <h1>📚 答题汇总系统</h1>
+        <a
+          href="https://github.com/cat-of-landlord/quiz-game"
+          class="github-link"
+        >
+          🔗 页面源代码：github.com/cat-of-landlord/quiz-game
+        </a>
+      </header>
 
-        <div class="category cat-animal">
-            <h2>🐱 动物百科知识</h2>
-            <div class="btn-grid">
-                <a class="btn btn-cat" href="家猫.html">家猫品种鉴别</a>
-                <a class="btn btn-cat" href="猫科动物.html">野外猫科动物</a>
-            </div>
+      <div class="category cat-history">
+        <h2>👤 历史人物与体育精英</h2>
+        <div class="btn-grid">
+          <a class="btn btn-history" href="共产主义战士.html"
+            >国际共产主义战士特辑</a
+          >
+          <a class="btn btn-athlete" href="全国十佳运动员.html"
+            >中国十佳运动员特辑</a
+          >
         </div>
-        
-        <div class="category cat-univ">
-            <h2>🏫 高等学府挑战</h2>
-            <div class="btn-grid">
-                <a class="btn btn-univ" href="北京市大学.html">北京市大学</a>
-                <a class="btn btn-univ" href="上海市大学.html">上海市大学</a>
-                <a class="btn btn-univ" href="广东省大学.html">广东省大学</a>
-                <a class="btn btn-univ" href="天津市大学.html">天津市大学</a>
-                <a class="btn btn-univ" href="重庆市大学.html">重庆市大学</a>
-            </div>
-        </div>
+      </div>
 
-        <div class="category cat-geo">
-            <h2>🌍 全球地理发现</h2>
-            <div class="btn-grid">
-                <a class="btn btn-geo" href="city-quiz.html">中国地级市识别</a>
-            </div>
+      <div class="category cat-animal">
+        <h2>🐱 动物百科知识</h2>
+        <div class="btn-grid">
+          <a class="btn btn-cat" href="家猫.html">家猫品种鉴别</a>
+          <a class="btn btn-cat" href="猫科动物.html">野外猫科动物</a>
         </div>
-        
-        <div class="instructions">
-            <h3>📖 使用说明</h3>
-            <p>1. 点击上方按钮进入对应的答题页面</p>
-            <p>2. 在答题页面输入答案，按回车键确认</p>
-            <p>3. 答完后点击"提交"查看成绩和排名</p>
-            <p>4. 答题过程中随时可以点击左上角的"← 首页"或"返回"按钮回到此处</p>
-            <p>5. 所有页面都支持重新开始答题</p>
+      </div>
+
+      <div class="category cat-univ">
+        <h2>🏫 高等学府挑战</h2>
+        <div class="btn-grid">
+          <a class="btn btn-univ" href="北京市大学.html">北京市大学</a>
+          <a class="btn btn-univ" href="上海市大学.html">上海市大学</a>
+          <a class="btn btn-univ" href="广东省大学.html">广东省大学</a>
+          <a class="btn btn-univ" href="天津市大学.html">天津市大学</a>
+          <a class="btn btn-univ" href="重庆市大学.html">重庆市大学</a>
         </div>
+      </div>
+
+      <div class="category cat-geo">
+        <h2>🌍 全球地理发现</h2>
+        <div class="btn-grid">
+          <a class="btn btn-geo" href="city-quiz.html">中国地级市识别</a>
+          <a class="btn btn-geo" href="country-quiz.html">世界国家填图挑战</a>
+        </div>
+      </div>
+
+      <div class="instructions">
+        <h3>📖 使用说明</h3>
+        <p>1. 点击上方按钮进入对应的答题页面</p>
+        <p>2. 在答题页面输入答案，按回车键确认</p>
+        <p>3. 答完后点击"提交"查看成绩和排名</p>
+        <p>4. 答题过程中随时可以点击左上角的"← 首页"或"返回"按钮回到此处</p>
+        <p>5. 所有页面都支持重新开始答题</p>
+      </div>
     </div>
-</body>
+  </body>
 </html>

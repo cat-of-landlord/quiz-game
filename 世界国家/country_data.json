@@ -1,0 +1,1384 @@
+{
+  "countries": [
+    {
+      "name": "中国",
+      "svgId": ["中国岛屿", "中华人民共和国", "china9", "十段线"],
+      "accuracy": 96,
+      "continent": "亚洲",
+      "subRegion": "东亚",
+      "remarks": "包含中国台湾地区、香港特别行政区、澳门特别行政区"
+    },
+    {
+      "name": "日本",
+      "svgId": "日本",
+      "accuracy": 93,
+      "continent": "亚洲",
+      "subRegion": "东亚"
+    },
+    {
+      "name": "美国",
+      "svgId": ["美国", "usa-out"],
+      "accuracy": 93,
+      "continent": "美洲",
+      "subRegion": "北美"
+    },
+    {
+      "name": "法国",
+      "svgId": ["法国", "france-out", "法属圣马丁"],
+      "accuracy": 92,
+      "continent": "欧洲",
+      "subRegion": "西欧"
+    },
+    {
+      "name": "印度",
+      "svgId": "印度",
+      "accuracy": 92,
+      "continent": "亚洲",
+      "subRegion": "南亚"
+    },
+    {
+      "name": "俄罗斯",
+      "svgId": "俄罗斯",
+      "accuracy": 92,
+      "continent": "欧洲",
+      "subRegion": "东欧"
+    },
+    {
+      "name": "韩国",
+      "svgId": "大韩民国",
+      "accuracy": 92,
+      "continent": "亚洲",
+      "subRegion": "东亚"
+    },
+    {
+      "name": "英国",
+      "svgId": ["英国", "uk-out", "福克兰群岛"],
+      "accuracy": 92,
+      "continent": "欧洲",
+      "subRegion": "西欧"
+    },
+    {
+      "name": "加拿大",
+      "svgId": "加拿大",
+      "accuracy": 91,
+      "continent": "美洲",
+      "subRegion": "北美"
+    },
+    {
+      "name": "德国",
+      "svgId": "德国",
+      "accuracy": 90,
+      "continent": "欧洲",
+      "subRegion": "中欧"
+    },
+    {
+      "name": "蒙古",
+      "svgId": "蒙古国",
+      "accuracy": 90,
+      "continent": "亚洲",
+      "subRegion": "东亚"
+    },
+    {
+      "name": "朝鲜",
+      "svgId": "朝鲜民主主义人民共和国",
+      "accuracy": 90,
+      "continent": "亚洲",
+      "subRegion": "东亚"
+    },
+    {
+      "name": "澳大利亚",
+      "svgId": ["澳大利亚", "australia-out"],
+      "accuracy": 89,
+      "continent": "大洋洲",
+      "subRegion": "澳大拉西亚"
+    },
+    {
+      "name": "意大利",
+      "svgId": "意大利",
+      "accuracy": 89,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "巴西",
+      "svgId": "巴西",
+      "accuracy": 88,
+      "continent": "美洲",
+      "subRegion": "南美"
+    },
+    {
+      "name": "墨西哥",
+      "svgId": "墨西哥",
+      "accuracy": 88,
+      "continent": "美洲",
+      "subRegion": "中美"
+    },
+    {
+      "name": "西班牙",
+      "svgId": "西班牙",
+      "accuracy": 88,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "泰国",
+      "svgId": "泰国",
+      "accuracy": 88,
+      "continent": "亚洲",
+      "subRegion": "东南亚"
+    },
+    {
+      "name": "越南",
+      "svgId": "越南",
+      "accuracy": 88,
+      "continent": "亚洲",
+      "subRegion": "东南亚"
+    },
+    {
+      "name": "印尼",
+      "svgId": "印度尼西亚",
+      "accuracy": 87,
+      "continent": "亚洲",
+      "subRegion": "东南亚"
+    },
+    {
+      "name": "缅甸",
+      "svgId": "缅甸",
+      "accuracy": 86,
+      "continent": "亚洲",
+      "subRegion": "东南亚"
+    },
+    {
+      "name": "巴基斯坦",
+      "svgId": "巴基斯坦",
+      "accuracy": 86,
+      "continent": "亚洲",
+      "subRegion": "南亚"
+    },
+    {
+      "name": "葡萄牙",
+      "svgId": "葡萄牙",
+      "accuracy": 86,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "埃及",
+      "svgId": "埃及",
+      "accuracy": 85,
+      "continent": "非洲",
+      "subRegion": "北非"
+    },
+    {
+      "name": "冰岛",
+      "svgId": "冰岛",
+      "accuracy": 85,
+      "continent": "欧洲",
+      "subRegion": "北欧"
+    },
+    {
+      "name": "老挝",
+      "svgId": "老挝",
+      "accuracy": 85,
+      "continent": "亚洲",
+      "subRegion": "东南亚"
+    },
+    {
+      "name": "马来西亚",
+      "svgId": "马来西亚",
+      "accuracy": 85,
+      "continent": "亚洲",
+      "subRegion": "东南亚"
+    },
+    {
+      "name": "乌克兰",
+      "svgId": "乌克兰",
+      "accuracy": 85,
+      "continent": "欧洲",
+      "subRegion": "东欧"
+    },
+    {
+      "name": "新西兰",
+      "svgId": "新西兰",
+      "accuracy": 84,
+      "continent": "大洋洲",
+      "subRegion": "澳大拉西亚"
+    },
+    {
+      "name": "挪威",
+      "svgId": ["挪威", "norway-out"],
+      "accuracy": 84,
+      "continent": "欧洲",
+      "subRegion": "北欧"
+    },
+    {
+      "name": "南非",
+      "svgId": "南非",
+      "accuracy": 84,
+      "continent": "非洲",
+      "subRegion": "南非"
+    },
+    {
+      "name": "瑞典",
+      "svgId": "瑞典",
+      "accuracy": 84,
+      "continent": "欧洲",
+      "subRegion": "北欧"
+    },
+    {
+      "name": "土耳其",
+      "svgId": "土耳其",
+      "accuracy": 84,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "阿根廷",
+      "svgId": "阿根廷",
+      "accuracy": 83,
+      "continent": "美洲",
+      "subRegion": "南美"
+    },
+    {
+      "name": "芬兰",
+      "svgId": ["奥兰", "芬兰"],
+      "accuracy": 83,
+      "continent": "欧洲",
+      "subRegion": "北欧"
+    },
+    {
+      "name": "爱尔兰",
+      "svgId": "爱尔兰",
+      "accuracy": 83,
+      "continent": "欧洲",
+      "subRegion": "西欧"
+    },
+    {
+      "name": "哈萨克斯坦",
+      "svgId": "哈萨克斯坦",
+      "accuracy": 83,
+      "continent": "亚洲",
+      "subRegion": "中亚"
+    },
+    {
+      "name": "菲律宾",
+      "svgId": "菲律宾",
+      "accuracy": 83,
+      "continent": "亚洲",
+      "subRegion": "东南亚"
+    },
+    {
+      "name": "智利",
+      "svgId": "智利",
+      "accuracy": 82,
+      "continent": "美洲",
+      "subRegion": "南美"
+    },
+    {
+      "name": "伊朗",
+      "svgId": "伊朗",
+      "accuracy": 82,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "尼泊尔",
+      "svgId": "尼泊尔",
+      "accuracy": 82,
+      "continent": "亚洲",
+      "subRegion": "南亚"
+    },
+    {
+      "name": "波兰",
+      "svgId": "波兰",
+      "accuracy": 82,
+      "continent": "欧洲",
+      "subRegion": "中欧"
+    },
+    {
+      "name": "瑞士",
+      "svgId": "瑞士",
+      "accuracy": 82,
+      "continent": "欧洲",
+      "subRegion": "中欧"
+    },
+    {
+      "name": "白罗斯",
+      "svgId": "白俄罗斯",
+      "accuracy": 81,
+      "continent": "欧洲",
+      "subRegion": "东欧"
+    },
+    {
+      "name": "柬埔寨",
+      "svgId": "柬埔寨",
+      "accuracy": 81,
+      "continent": "亚洲",
+      "subRegion": "东南亚"
+    },
+    {
+      "name": "丹麦",
+      "svgId": ["丹麦", "denmark-out"],
+      "accuracy": 81,
+      "continent": "欧洲",
+      "subRegion": "北欧"
+    },
+    {
+      "name": "沙特阿拉伯",
+      "svgId": "沙特阿拉伯",
+      "accuracy": 81,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "以色列",
+      "svgId": "以色列",
+      "accuracy": 80,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "吉尔吉斯斯坦",
+      "svgId": "吉尔吉斯斯坦",
+      "accuracy": 80,
+      "continent": "亚洲",
+      "subRegion": "中亚"
+    },
+    {
+      "name": "阿富汗",
+      "svgId": "阿富汗",
+      "accuracy": 79,
+      "continent": "亚洲",
+      "subRegion": "南亚"
+    },
+    {
+      "name": "不丹",
+      "svgId": "不丹",
+      "accuracy": 79,
+      "continent": "亚洲",
+      "subRegion": "南亚"
+    },
+    {
+      "name": "希腊",
+      "svgId": "希腊",
+      "accuracy": 79,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "荷兰",
+      "svgId": ["荷兰", "netherlands-out"],
+      "accuracy": 79,
+      "continent": "欧洲",
+      "subRegion": "西欧"
+    },
+    {
+      "name": "孟加拉国",
+      "svgId": "孟加拉国",
+      "accuracy": 78,
+      "continent": "亚洲",
+      "subRegion": "南亚"
+    },
+    {
+      "name": "刚果",
+      "svgId": "刚果",
+      "accuracy": 77,
+      "continent": "非洲",
+      "subRegion": "中非"
+    },
+    {
+      "name": "刚果民主共和国",
+      "svgId": "刚果民主共和国",
+      "accuracy": 77,
+      "continent": "非洲",
+      "subRegion": "中非"
+    },
+    {
+      "name": "古巴",
+      "svgId": "古巴",
+      "accuracy": 77,
+      "continent": "美洲",
+      "subRegion": "加勒比"
+    },
+    {
+      "name": "伊拉克",
+      "svgId": "伊拉克",
+      "accuracy": 77,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "马达加斯加",
+      "svgId": "马达加斯加",
+      "accuracy": 77,
+      "continent": "非洲",
+      "subRegion": "东非"
+    },
+    {
+      "name": "也门",
+      "svgId": "也门",
+      "accuracy": 77,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "比利时",
+      "svgId": "比利时",
+      "accuracy": 76,
+      "continent": "欧洲",
+      "subRegion": "西欧"
+    },
+    {
+      "name": "巴勒斯坦",
+      "svgId": "巴勒斯坦",
+      "accuracy": 76,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "阿联酋",
+      "svgId": "阿拉伯联合酋长国",
+      "accuracy": 76,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "奥地利",
+      "svgId": "奥地利",
+      "accuracy": 75,
+      "continent": "欧洲",
+      "subRegion": "中欧"
+    },
+    {
+      "name": "斯里兰卡",
+      "svgId": "斯里兰卡",
+      "accuracy": 75,
+      "continent": "亚洲",
+      "subRegion": "南亚"
+    },
+    {
+      "name": "捷克",
+      "svgId": "捷克",
+      "accuracy": 74,
+      "continent": "欧洲",
+      "subRegion": "中欧"
+    },
+    {
+      "name": "塔吉克斯坦",
+      "svgId": "塔吉克斯坦",
+      "accuracy": 74,
+      "continent": "亚洲",
+      "subRegion": "中亚"
+    },
+    {
+      "name": "巴拿马",
+      "svgId": "巴拿马",
+      "accuracy": 72,
+      "continent": "美洲",
+      "subRegion": "中美"
+    },
+    {
+      "name": "叙利亚",
+      "svgId": "叙利亚",
+      "accuracy": 71,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "摩洛哥",
+      "svgId": "摩洛哥",
+      "accuracy": 70,
+      "continent": "非洲",
+      "subRegion": "北非"
+    },
+    {
+      "name": "塞尔维亚",
+      "svgId": "塞尔维亚",
+      "accuracy": 70,
+      "continent": "欧洲",
+      "subRegion": "东欧"
+    },
+    {
+      "name": "新加坡",
+      "svgId": ["新加坡", "singapore-cover"],
+      "accuracy": 70,
+      "continent": "亚洲",
+      "subRegion": "东南亚"
+    },
+    {
+      "name": "斯洛伐克",
+      "svgId": "斯洛伐克",
+      "accuracy": 70,
+      "continent": "欧洲",
+      "subRegion": "中欧"
+    },
+    {
+      "name": "乌兹别克斯坦",
+      "svgId": "乌兹别克斯坦",
+      "accuracy": 70,
+      "continent": "亚洲",
+      "subRegion": "中亚"
+    },
+    {
+      "name": "匈牙利",
+      "svgId": "匈牙利",
+      "accuracy": 69,
+      "continent": "欧洲",
+      "subRegion": "中欧"
+    },
+    {
+      "name": "立陶宛",
+      "svgId": "立陶宛",
+      "accuracy": 69,
+      "continent": "欧洲",
+      "subRegion": "东欧"
+    },
+    {
+      "name": "秘鲁",
+      "svgId": "秘鲁",
+      "accuracy": 69,
+      "continent": "美洲",
+      "subRegion": "南美"
+    },
+    {
+      "name": "黑山",
+      "svgId": "黑山",
+      "accuracy": 68,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "卡塔尔",
+      "svgId": "卡塔尔",
+      "accuracy": 68,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "索马里",
+      "svgId": "索马里",
+      "accuracy": 68,
+      "continent": "非洲",
+      "subRegion": "东非"
+    },
+    {
+      "name": "土库曼斯坦",
+      "svgId": "土库曼斯坦",
+      "accuracy": 68,
+      "continent": "亚洲",
+      "subRegion": "中亚"
+    },
+    {
+      "name": "阿尔及利亚",
+      "svgId": "阿尔及利亚",
+      "accuracy": 67,
+      "continent": "非洲",
+      "subRegion": "北非"
+    },
+    {
+      "name": "罗马尼亚",
+      "svgId": "罗马尼亚",
+      "accuracy": 67,
+      "continent": "欧洲",
+      "subRegion": "东欧"
+    },
+    {
+      "name": "苏丹",
+      "svgId": "苏丹",
+      "accuracy": 67,
+      "continent": "非洲",
+      "subRegion": "北非"
+    },
+    {
+      "name": "阿塞拜疆",
+      "svgId": "阿塞拜疆",
+      "accuracy": 66,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "哥伦比亚",
+      "svgId": "哥伦比亚",
+      "accuracy": 66,
+      "continent": "美洲",
+      "subRegion": "南美"
+    },
+    {
+      "name": "爱沙尼亚",
+      "svgId": "爱沙尼亚",
+      "accuracy": 66,
+      "continent": "欧洲",
+      "subRegion": "东欧"
+    },
+    {
+      "name": "埃塞俄比亚",
+      "svgId": "埃塞俄比亚",
+      "accuracy": 66,
+      "continent": "非洲",
+      "subRegion": "东非"
+    },
+    {
+      "name": "利比亚",
+      "svgId": "利比亚",
+      "accuracy": 66,
+      "continent": "非洲",
+      "subRegion": "北非"
+    },
+    {
+      "name": "阿曼",
+      "svgId": "阿曼",
+      "accuracy": 66,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "乌拉圭",
+      "svgId": "乌拉圭",
+      "accuracy": 66,
+      "continent": "美洲",
+      "subRegion": "南美"
+    },
+    {
+      "name": "梵蒂冈",
+      "svgId": ["梵蒂冈", "vatican-cover"],
+      "accuracy": 66,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "海地",
+      "svgId": "海地",
+      "accuracy": 65,
+      "continent": "美洲",
+      "subRegion": "加勒比"
+    },
+    {
+      "name": "保加利亚",
+      "svgId": "保加利亚",
+      "accuracy": 64,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "巴拉圭",
+      "svgId": "巴拉圭",
+      "accuracy": 64,
+      "continent": "美洲",
+      "subRegion": "南美"
+    },
+    {
+      "name": "玻利维亚",
+      "svgId": "玻利维亚",
+      "accuracy": 63,
+      "continent": "美洲",
+      "subRegion": "南美"
+    },
+    {
+      "name": "格鲁吉亚",
+      "svgId": "格鲁吉亚",
+      "accuracy": 62,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "亚美尼亚",
+      "svgId": "亚美尼亚",
+      "accuracy": 61,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "中非",
+      "svgId": "中非",
+      "accuracy": 61,
+      "continent": "非洲",
+      "subRegion": "中非"
+    },
+    {
+      "name": "克罗地亚",
+      "svgId": "克罗地亚",
+      "accuracy": 61,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "约旦",
+      "svgId": "约旦",
+      "accuracy": 61,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "拉脱维亚",
+      "svgId": "拉脱维亚",
+      "accuracy": 61,
+      "continent": "欧洲",
+      "subRegion": "东欧"
+    },
+    {
+      "name": "卢森堡",
+      "svgId": "卢森堡",
+      "accuracy": 61,
+      "continent": "欧洲",
+      "subRegion": "西欧"
+    },
+    {
+      "name": "尼日尔",
+      "svgId": "尼日尔",
+      "accuracy": 61,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "巴布亚新几内亚",
+      "svgId": "巴布亚新几内亚",
+      "accuracy": 61,
+      "continent": "大洋洲",
+      "subRegion": "美拉尼西亚"
+    },
+    {
+      "name": "波斯尼亚和黑塞哥维那",
+      "svgId": "波斯尼亚和黑塞哥维那",
+      "accuracy": 60,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "南苏丹",
+      "svgId": "南苏丹",
+      "accuracy": 60,
+      "continent": "非洲",
+      "subRegion": "东非"
+    },
+    {
+      "name": "委内瑞拉",
+      "svgId": "委内瑞拉",
+      "accuracy": 60,
+      "continent": "美洲",
+      "subRegion": "南美"
+    },
+    {
+      "name": "科威特",
+      "svgId": "科威特",
+      "accuracy": 59,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "黎巴嫩",
+      "svgId": "黎巴嫩",
+      "accuracy": 59,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "阿尔巴尼亚",
+      "svgId": "阿尔巴尼亚",
+      "accuracy": 58,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "文莱",
+      "svgId": "文莱",
+      "accuracy": 58,
+      "continent": "亚洲",
+      "subRegion": "东南亚"
+    },
+    {
+      "name": "塞浦路斯",
+      "svgId": "塞浦路斯",
+      "accuracy": 58,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "几内亚",
+      "svgId": "几内亚",
+      "accuracy": 57,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "圭亚那",
+      "svgId": "圭亚那",
+      "accuracy": 57,
+      "continent": "美洲",
+      "subRegion": "南美"
+    },
+    {
+      "name": "马尔代夫",
+      "svgId": ["马尔代夫", "maldives-cover"],
+      "accuracy": 57,
+      "continent": "亚洲",
+      "subRegion": "南亚"
+    },
+    {
+      "name": "尼日利亚",
+      "svgId": "尼日利亚",
+      "accuracy": 57,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "东帝汶",
+      "svgId": "东帝汶",
+      "accuracy": 57,
+      "continent": "亚洲",
+      "subRegion": "东南亚"
+    },
+    {
+      "name": "突尼斯",
+      "svgId": "突尼斯",
+      "accuracy": 57,
+      "continent": "非洲",
+      "subRegion": "北非"
+    },
+    {
+      "name": "赤道几内亚",
+      "svgId": "赤道几内亚",
+      "accuracy": 55,
+      "continent": "非洲",
+      "subRegion": "中非"
+    },
+    {
+      "name": "北马其顿",
+      "svgId": "北马其顿",
+      "accuracy": 55,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "斯洛文尼亚",
+      "svgId": "斯洛文尼亚",
+      "accuracy": 53,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "摩纳哥",
+      "svgId": ["摩纳哥", "monaco-cover"],
+      "accuracy": 51,
+      "continent": "欧洲",
+      "subRegion": "西欧"
+    },
+    {
+      "name": "坦桑尼亚",
+      "svgId": "坦桑尼亚",
+      "accuracy": 51,
+      "continent": "非洲",
+      "subRegion": "东非"
+    },
+    {
+      "name": "危地马拉",
+      "svgId": "危地马拉",
+      "accuracy": 50,
+      "continent": "美洲",
+      "subRegion": "中美"
+    },
+    {
+      "name": "摩尔多瓦",
+      "svgId": "摩尔多瓦",
+      "accuracy": 50,
+      "continent": "欧洲",
+      "subRegion": "东欧"
+    },
+    {
+      "name": "巴林",
+      "svgId": ["巴林", "bahrain-cover"],
+      "accuracy": 49,
+      "continent": "亚洲",
+      "subRegion": "西亚"
+    },
+    {
+      "name": "洪都拉斯",
+      "svgId": "洪都拉斯",
+      "accuracy": 49,
+      "continent": "美洲",
+      "subRegion": "中美"
+    },
+    {
+      "name": "肯尼亚",
+      "svgId": "肯尼亚",
+      "accuracy": 49,
+      "continent": "非洲",
+      "subRegion": "东非"
+    },
+    {
+      "name": "马里",
+      "svgId": "马里",
+      "accuracy": 49,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "乍得",
+      "svgId": "乍得",
+      "accuracy": 48,
+      "continent": "非洲",
+      "subRegion": "中非"
+    },
+    {
+      "name": "厄瓜多尔",
+      "svgId": "厄瓜多尔",
+      "accuracy": 48,
+      "continent": "美洲",
+      "subRegion": "南美"
+    },
+    {
+      "name": "马耳他",
+      "svgId": ["马耳他", "malta-cover"],
+      "accuracy": 48,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "苏里南",
+      "svgId": "苏里南",
+      "accuracy": 48,
+      "continent": "美洲",
+      "subRegion": "南美"
+    },
+    {
+      "name": "安哥拉",
+      "svgId": "安哥拉",
+      "accuracy": 47,
+      "continent": "非洲",
+      "subRegion": "南部非洲"
+    },
+    {
+      "name": "斐济",
+      "svgId": "Fiji-cover",
+      "accuracy": 47,
+      "continent": "大洋洲",
+      "subRegion": "美拉尼西亚"
+    },
+    {
+      "name": "纳米比亚",
+      "svgId": "纳米比亚",
+      "accuracy": 47,
+      "continent": "非洲",
+      "subRegion": "南部非洲"
+    },
+    {
+      "name": "津巴布韦",
+      "svgId": "津巴布韦",
+      "accuracy": 47,
+      "continent": "非洲",
+      "subRegion": "南部非洲"
+    },
+    {
+      "name": "牙买加",
+      "svgId": "牙买加",
+      "accuracy": 46,
+      "continent": "美洲",
+      "subRegion": "加勒比"
+    },
+    {
+      "name": "安道尔",
+      "svgId": ["安道尔", "andorra-cover"],
+      "accuracy": 45,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "多米尼加",
+      "svgId": "多米尼加",
+      "accuracy": 45,
+      "continent": "美洲",
+      "subRegion": "加勒比"
+    },
+    {
+      "name": "莫桑比克",
+      "svgId": "莫桑比克",
+      "accuracy": 45,
+      "continent": "非洲",
+      "subRegion": "南部非洲"
+    },
+    {
+      "name": "赞比亚",
+      "svgId": "赞比亚",
+      "accuracy": 45,
+      "continent": "非洲",
+      "subRegion": "南部非洲"
+    },
+    {
+      "name": "哥斯达黎加",
+      "svgId": "哥斯达黎加",
+      "accuracy": 44,
+      "continent": "美洲",
+      "subRegion": "中美"
+    },
+    {
+      "name": "冈比亚",
+      "svgId": "冈比亚",
+      "accuracy": 44,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "加纳",
+      "svgId": "加纳",
+      "accuracy": 44,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "列支敦斯登",
+      "svgId": ["列支敦士登", "liechtenstein-cover"],
+      "accuracy": 44,
+      "continent": "欧洲",
+      "subRegion": "中欧"
+    },
+    {
+      "name": "贝宁",
+      "svgId": "贝宁",
+      "accuracy": 43,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "瑙鲁",
+      "svgId": ["瑙鲁", "Nauru-cover"],
+      "accuracy": 43,
+      "continent": "大洋洲",
+      "subRegion": "密克罗尼西亚"
+    },
+    {
+      "name": "圣马力诺",
+      "svgId": ["圣马力诺", "sanmarino-cover"],
+      "accuracy": 43,
+      "continent": "欧洲",
+      "subRegion": "南欧"
+    },
+    {
+      "name": "利比里亚",
+      "svgId": "利比里亚",
+      "accuracy": 41,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "乌干达",
+      "svgId": "乌干达",
+      "accuracy": 41,
+      "continent": "非洲",
+      "subRegion": "东非"
+    },
+    {
+      "name": "巴哈马",
+      "svgId": "巴哈马",
+      "accuracy": 40,
+      "continent": "美洲",
+      "subRegion": "加勒比"
+    },
+    {
+      "name": "尼加拉瓜",
+      "svgId": "尼加拉瓜",
+      "accuracy": 40,
+      "continent": "美洲",
+      "subRegion": "中美"
+    },
+    {
+      "name": "厄立特里亚",
+      "svgId": "厄立特里亚",
+      "accuracy": 39,
+      "continent": "非洲",
+      "subRegion": "东非"
+    },
+    {
+      "name": "莱索托",
+      "svgId": "莱索托",
+      "accuracy": 39,
+      "continent": "非洲",
+      "subRegion": "南部非洲"
+    },
+    {
+      "name": "塞内加尔",
+      "svgId": "塞内加尔",
+      "accuracy": 39,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "喀麦隆",
+      "svgId": "喀麦隆",
+      "accuracy": 38,
+      "continent": "非洲",
+      "subRegion": "中非"
+    },
+    {
+      "name": "毛里塔尼亚",
+      "svgId": "毛里塔尼亚",
+      "accuracy": 38,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "卢旺达",
+      "svgId": "卢旺达",
+      "accuracy": 38,
+      "continent": "非洲",
+      "subRegion": "东非"
+    },
+    {
+      "name": "斯威士兰",
+      "svgId": "斯威士兰",
+      "accuracy": 38,
+      "continent": "非洲",
+      "subRegion": "南部非洲"
+    },
+    {
+      "name": "多哥",
+      "svgId": "多哥",
+      "accuracy": 38,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "科特迪瓦",
+      "svgId": "科特迪瓦",
+      "accuracy": 37,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "吉布提",
+      "svgId": "吉布提",
+      "accuracy": 37,
+      "continent": "非洲",
+      "subRegion": "东非"
+    },
+    {
+      "name": "毛里求斯",
+      "svgId": ["毛里求斯", "mauritius-cover"],
+      "accuracy": 37,
+      "continent": "非洲",
+      "subRegion": "南部非洲"
+    },
+    {
+      "name": "布基纳法索",
+      "svgId": "布基纳法索",
+      "accuracy": 36,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "所罗门群岛",
+      "svgId": "Solomon-cover",
+      "accuracy": 36,
+      "continent": "大洋洲",
+      "subRegion": "美拉尼西亚"
+    },
+    {
+      "name": "汤加",
+      "svgId": ["汤加", "Tonga-cover"],
+      "accuracy": 36,
+      "continent": "大洋洲",
+      "subRegion": "波利尼西亚"
+    },
+    {
+      "name": "伯利兹",
+      "svgId": "伯利兹",
+      "accuracy": 35,
+      "continent": "美洲",
+      "subRegion": "中美"
+    },
+    {
+      "name": "加蓬",
+      "svgId": "加蓬",
+      "accuracy": 35,
+      "continent": "非洲",
+      "subRegion": "中非"
+    },
+    {
+      "name": "几内亚比绍",
+      "svgId": "几内亚比绍",
+      "accuracy": 35,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "博茨瓦纳",
+      "svgId": "博茨瓦纳",
+      "accuracy": 34,
+      "continent": "非洲",
+      "subRegion": "南部非洲"
+    },
+    {
+      "name": "马拉维",
+      "svgId": "马拉维",
+      "accuracy": 32,
+      "continent": "非洲",
+      "subRegion": "南部非洲"
+    },
+    {
+      "name": "佛得角",
+      "svgId": ["佛得角", "verde-cover"],
+      "accuracy": 31,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "萨尔瓦多",
+      "svgId": "萨尔瓦多",
+      "accuracy": 31,
+      "continent": "美洲",
+      "subRegion": "中美"
+    },
+    {
+      "name": "密克罗尼西亚联邦",
+      "svgId": ["Micronesia-cover", "密克罗尼西亚联邦"],
+      "accuracy": 30,
+      "continent": "大洋洲",
+      "subRegion": "密克罗尼西亚"
+    },
+    {
+      "name": "塞舌尔",
+      "svgId": ["塞舌尔", "seychelles-cover"],
+      "accuracy": 30,
+      "continent": "非洲",
+      "subRegion": "东非"
+    },
+    {
+      "name": "布隆迪",
+      "svgId": "布隆迪",
+      "accuracy": 29,
+      "continent": "非洲",
+      "subRegion": "东非"
+    },
+    {
+      "name": "帕劳",
+      "svgId": ["帕劳", "Palau-cover"],
+      "accuracy": 29,
+      "continent": "大洋洲",
+      "subRegion": "密克罗尼西亚"
+    },
+    {
+      "name": "塞拉利昂",
+      "svgId": "塞拉利昂",
+      "accuracy": 28,
+      "continent": "非洲",
+      "subRegion": "西非"
+    },
+    {
+      "name": "巴巴多斯",
+      "svgId": ["巴巴多斯", "barbados-cover"],
+      "accuracy": 27,
+      "continent": "美洲",
+      "subRegion": "加勒比"
+    },
+    {
+      "name": "基里巴斯",
+      "svgId": ["基里巴斯", "Kiribati-cover"],
+      "accuracy": 26,
+      "continent": "大洋洲",
+      "subRegion": "密克罗尼西亚"
+    },
+    {
+      "name": "马绍尔群岛",
+      "svgId": ["马绍尔群岛", "Marshall-cover"],
+      "accuracy": 26,
+      "continent": "大洋洲",
+      "subRegion": "密克罗尼西亚"
+    },
+    {
+      "name": "多米尼克",
+      "svgId": ["多米尼克", "dominica-cover"],
+      "accuracy": 25,
+      "continent": "美洲",
+      "subRegion": "加勒比"
+    },
+    {
+      "name": "圣多美和普林西比",
+      "svgId": ["圣多美和普林西比", "saotome-cover"],
+      "accuracy": 25,
+      "continent": "非洲",
+      "subRegion": "中非"
+    },
+    {
+      "name": "图瓦卢",
+      "svgId": ["图瓦卢", "Tuvalu-cover"],
+      "accuracy": 25,
+      "continent": "大洋洲",
+      "subRegion": "波利尼西亚"
+    },
+    {
+      "name": "特立尼达和多巴哥",
+      "svgId": ["特立尼达和多巴哥", "trinidad-cover"],
+      "accuracy": 22,
+      "continent": "美洲",
+      "subRegion": "加勒比"
+    },
+    {
+      "name": "科摩罗",
+      "svgId": "comoros-cover",
+      "accuracy": 21,
+      "continent": "非洲",
+      "subRegion": "东非"
+    },
+    {
+      "name": "萨摩亚",
+      "svgId": ["萨摩亚", "Samoa-cover"],
+      "accuracy": 21,
+      "continent": "大洋洲",
+      "subRegion": "波利尼西亚"
+    },
+    {
+      "name": "瓦努阿图",
+      "svgId": "瓦努阿图",
+      "accuracy": 21,
+      "continent": "大洋洲",
+      "subRegion": "美拉尼西亚"
+    },
+    {
+      "name": "安提瓜和巴布达",
+      "svgId": ["安提瓜和巴布达", "antigua-cover"],
+      "accuracy": 19,
+      "continent": "美洲",
+      "subRegion": "加勒比"
+    },
+    {
+      "name": "格林纳达",
+      "svgId": ["格林纳达", "grenada-cover"],
+      "accuracy": 18,
+      "continent": "美洲",
+      "subRegion": "加勒比"
+    },
+    {
+      "name": "圣文森特和格林纳丁斯",
+      "svgId": ["圣文森特和格林纳丁斯", "vincent-cover"],
+      "accuracy": 18,
+      "continent": "美洲",
+      "subRegion": "加勒比"
+    },
+    {
+      "name": "圣卢西亚",
+      "svgId": ["圣卢西亚", "lucia-cover"],
+      "accuracy": 16,
+      "continent": "美洲",
+      "subRegion": "加勒比"
+    },
+    {
+      "name": "圣基茨和尼维斯",
+      "svgId": ["圣基茨和尼维斯", "kitts-cover"],
+      "accuracy": 14,
+      "continent": "美洲",
+      "subRegion": "加勒比"
+    },
+    {
+      "name": "纽埃",
+      "svgId": "Niue-cover",
+      "accuracy": 14,
+      "continent": "大洋洲",
+      "subRegion": "波利尼西亚"
+    },
+    {
+      "name": "库克群岛",
+      "svgId": "Cook-cover",
+      "accuracy": 14,
+      "continent": "大洋洲",
+      "subRegion": "波利尼西亚"
+    }
+  ]
+}
