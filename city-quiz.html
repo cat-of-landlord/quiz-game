@@ -1033,7 +1033,14 @@
 
         sortedAccuracy.forEach((item) => {
           let sysCityName = item.city_name;
-          const fullSuffixes = ["特别行政区", "自治州", "地区", "盟", "林区"];
+          const fullSuffixes = [
+            "特别行政区",
+            "自治州",
+            "地区",
+            "盟",
+            "林区",
+            "县",
+          ];
           const isFullName = fullSuffixes.some((suffix) =>
             sysCityName.endsWith(suffix)
           );

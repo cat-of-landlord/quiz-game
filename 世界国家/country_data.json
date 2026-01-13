@@ -17,7 +17,7 @@
     },
     {
       "name": "美国",
-      "svgId": ["美国", "usa-out"],
+      "svgId": ["美国", "us-out"],
       "accuracy": 93,
       "continent": "美洲",
       "subRegion": "北美"
